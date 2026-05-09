@@ -189,6 +189,7 @@ a {
 
 /* style.css - Add to your existing CSS */
 
+/* ------------------------------------------------------------------------------------------------------------------ */
 /* HEADER STYLES */
 .header {
     position: fixed;
@@ -219,7 +220,7 @@ a {
 
 .nav-logo {
     font-size: var(--text-xl);
-    font-weight: 700;
+    font-weight: 800;
     color: hsl(var(--foreground));
     letter-spacing: -0.02em;
     transition: var(--transition);
@@ -417,7 +418,6 @@ a {
     backdrop-filter: blur(10px);
 }
 
-/* ------------------------------------------------------------------------------------------------------------------ */
 /* HERO SECTION STYLES */
 .nav-cta {
     display: inline-flex;
@@ -575,9 +575,8 @@ a {
     background: hsla(var(--background), 0.92);
 }
 
-/* =========================================================
-   HERO SECTION
-   ========================================================= */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* HERO SECTION */
 .hero {
     padding: var(--space-16) 0 var(--space-12);
     background: hsl(var(--background));
@@ -597,9 +596,9 @@ a {
 }
 
 .hero__title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(3.5rem, 5vw, 5.5rem);
     line-height: 1.05;
-    font-weight: 700;
+    font-weight: 900;
     color: hsl(var(--foreground));
     margin-bottom: var(--space-6);
     letter-spacing: -0.02em;
@@ -982,8 +981,8 @@ a {
 }
 
 .expertise__title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
     color: hsl(var(--foreground));
     margin-bottom: var(--space-4);
     letter-spacing: -0.03em;
@@ -1182,8 +1181,8 @@ a {
 
 /* Typography */
 .manifesto__title {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
     line-height: 1.2;
     margin-bottom: var(--space-6);
     color: hsl(var(--primary-foreground));
@@ -1241,8 +1240,8 @@ a {
 
 .process__title {
     text-align: center;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Larger, bolder */
+    font-weight: 800;
     color: hsl(var(--foreground));
     margin-bottom: var(--space-16);
     letter-spacing: -0.02em;
@@ -1277,7 +1276,7 @@ a {
     font-weight: 800;
     line-height: 1;
     color: hsl(var(--foreground));
-    opacity: 0.05;
+    opacity: 0.15;
     pointer-events: none;
     user-select: none;
     z-index: -1;
@@ -1285,8 +1284,8 @@ a {
 }
 
 .process__heading {
-    font-size: var(--text-2xl);
-    font-weight: 600;
+    font-size: var(--text-4xl);
+    font-weight: 700;
     color: hsl(var(--foreground));
     margin-bottom: var(--space-4);
 }
