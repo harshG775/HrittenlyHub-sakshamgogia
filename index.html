@@ -810,6 +810,7 @@
                 box-shadow: var(--shadow-sm);
                 transition: var(--transition);
                 overflow: hidden;
+                position: relative;
             }
 
             .service-row:hover .service-visual {
@@ -817,28 +818,141 @@
                 transform: translateY(-4px);
             }
 
-            .service-icon {
-                width: 80px;
-                height: 80px;
+            /* Combo Layout Styles */
+            .service-visual.combo {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: var(--text-muted);
-                opacity: 0.4;
+                position: relative;
+                background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            }
+
+            .service-icon-large {
+                width: 160px;
+                height: 160px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--accent-primary);
+                z-index: 2;
+                position: relative;
                 transition: var(--transition);
             }
 
-            .service-row:hover .service-icon {
-                opacity: 0.8;
-                transform: scale(1.1);
+            .service-icon-large svg {
+                width: 100%;
+                height: 100%;
+                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
             }
 
-            .service-icon svg {
-                width: 48px;
-                height: 48px;
-                stroke: currentColor;
-                stroke-width: 1.5;
-                fill: none;
+            .service-row:hover .service-icon-large {
+                color: var(--accent-secondary);
+                transform: scale(1.08) rotate(2deg);
+            }
+
+            .service-row:hover .service-icon-large svg {
+                filter: drop-shadow(0 8px 16px rgba(79, 70, 229, 0.25));
+            }
+
+            /* Decorative Elements */
+            .decorative-elements {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                overflow: hidden;
+            }
+
+            .deco-circle {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border: 2px solid var(--accent-primary);
+                border-radius: 50%;
+                opacity: 0.15;
+                top: 15px;
+                right: 25px;
+                transition: var(--transition);
+            }
+
+            .deco-circle-small {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                border: 2px solid var(--accent-tertiary);
+                border-radius: 50%;
+                opacity: 0.2;
+                bottom: 20px;
+                left: 15px;
+                transition: var(--transition);
+            }
+
+            .deco-line {
+                position: absolute;
+                width: 70px;
+                height: 3px;
+                background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+                bottom: 35px;
+                right: 20px;
+                border-radius: 2px;
+                opacity: 0.3;
+                transition: var(--transition);
+            }
+
+            .deco-dot {
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                background: var(--gold-accent);
+                border-radius: 50%;
+                top: 45%;
+                right: 18px;
+                opacity: 0.5;
+                box-shadow: 0 0 10px rgba(217, 119, 6, 0.4);
+                transition: var(--transition);
+            }
+
+            /* Hover Effects for Decorative Elements */
+            .service-row:hover .deco-circle {
+                opacity: 0.25;
+                transform: scale(1.1);
+                border-color: var(--accent-secondary);
+            }
+
+            .service-row:hover .deco-circle-small {
+                opacity: 0.3;
+                transform: scale(1.15);
+            }
+
+            .service-row:hover .deco-line {
+                opacity: 0.5;
+                width: 85px;
+                background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+            }
+
+            .service-row:hover .deco-dot {
+                opacity: 0.8;
+                transform: scale(1.3);
+                box-shadow: 0 0 15px rgba(217, 119, 6, 0.6);
+            }
+
+            /* Animation for floating effect */
+            @keyframes floatDecorative {
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-5px);
+                }
+            }
+
+            .service-visual.combo:hover .deco-circle {
+                animation: floatDecorative 3s ease-in-out infinite;
+            }
+
+            .service-visual.combo:hover .deco-circle-small {
+                animation: floatDecorative 3s ease-in-out infinite 0.5s;
             }
 
             @media (max-width: 968px) {
@@ -852,6 +966,11 @@
                 .service-row.reverse > * {
                     direction: ltr;
                 }
+
+                .service-icon-large {
+                    width: 140px;
+                    height: 140px;
+                }
             }
 
             @media (max-width: 640px) {
@@ -859,14 +978,23 @@
                     font-size: 1.5rem;
                 }
 
-                .service-icon {
-                    width: 60px;
-                    height: 60px;
+                .service-icon-large {
+                    width: 120px;
+                    height: 120px;
                 }
 
-                .service-icon svg {
-                    width: 32px;
-                    height: 32px;
+                .deco-circle {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .deco-circle-small {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .deco-line {
+                    width: 50px;
                 }
             }
 
@@ -1350,13 +1478,188 @@
                                 </p>
                                 <a href="#contact" class="service-link">Explore →</a>
                             </div>
-                            <div class="service-visual">
-                                <div class="service-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <circle cx="12" cy="12" r="6" />
-                                        <circle cx="12" cy="12" r="2" />
+                            <div class="service-visual combo">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Concentric Circles -->
+                                        <circle
+                                            cx="60"
+                                            cy="60"
+                                            r="50"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.2"
+                                        />
+                                        <circle
+                                            cx="60"
+                                            cy="60"
+                                            r="35"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                        />
+                                        <circle
+                                            cx="60"
+                                            cy="60"
+                                            r="20"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.6"
+                                        />
+                                        <circle cx="60" cy="60" r="6" fill="currentColor" opacity="0.8" />
+
+                                        <!-- Analytics Bars -->
+                                        <rect
+                                            x="28"
+                                            y="72"
+                                            width="7"
+                                            height="18"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.6"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="18;14;18"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="72;76;72"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="40"
+                                            y="65"
+                                            width="7"
+                                            height="25"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.7"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="25;20;25"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="65;70;65"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="52"
+                                            y="58"
+                                            width="7"
+                                            height="32"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.8"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="32;27;32"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="58;63;58"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="64"
+                                            y="68"
+                                            width="7"
+                                            height="22"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.7"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="22;17;22"
+                                                dur="3.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="68;73;68"
+                                                dur="3.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="76"
+                                            y="62"
+                                            width="7"
+                                            height="28"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.6"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="28;23;28"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="62;67;62"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+
+                                        <!-- Arrow -->
+                                        <path
+                                            d="M 82 42 L 92 32 M 92 32 L 82 22"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            opacity="0.8"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="rotate"
+                                                from="0 87 27"
+                                                to="8 87 27"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </path>
+                                        <path
+                                            d="M 92 32 L 72 52"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            opacity="0.8"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="rotate"
+                                                from="0 82 42"
+                                                to="12 82 42"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </path>
                                     </svg>
+                                </div>
+                                <div class="decorative-elements">
+                                    <div class="deco-circle"></div>
+                                    <div class="deco-line"></div>
+                                    <div class="deco-dot"></div>
+                                    <div class="deco-circle-small"></div>
                                 </div>
                             </div>
                         </div>
@@ -1372,11 +1675,120 @@
                                 </p>
                                 <a href="#contact" class="service-link">Explore →</a>
                             </div>
-                            <div class="service-visual">
-                                <div class="service-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                            <div class="service-visual combo">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Document -->
+                                        <rect
+                                            x="32"
+                                            y="22"
+                                            width="46"
+                                            height="65"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.3"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="36"
+                                            x2="68"
+                                            y2="36"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="46"
+                                            x2="66"
+                                            y2="46"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="56"
+                                            x2="70"
+                                            y2="56"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="66"
+                                            x2="62"
+                                            y2="66"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
+
+                                        <!-- Pen -->
+                                        <g transform="translate(62, 62) rotate(-45)">
+                                            <path d="M 0 0 L 7 -7 L 16 2 L 9 9 Z" fill="currentColor" opacity="0.9" />
+                                            <path
+                                                d="M 7 -7 L 11 -11 M 9 2 L 13 -2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                opacity="0.6"
+                                            />
+                                            <path d="M 9 9 L 11 16 L 7 16 Z" fill="currentColor" opacity="0.7" />
+                                            <path
+                                                d="M 11 16 Q 14 22 9 26"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                opacity="0.8"
+                                            >
+                                                <animate
+                                                    attributeName="d"
+                                                    values="M 11 16 Q 14 22 9 26; M 11 16 Q 12 20 10 24; M 11 16 Q 14 22 9 26"
+                                                    dur="2s"
+                                                    repeatCount="indefinite"
+                                                />
+                                            </path>
+                                        </g>
+
+                                        <!-- Sparkles -->
+                                        <circle cx="42" y="28" r="2" fill="currentColor" opacity="0.6">
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.6;0.2;0.6"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </circle>
+                                        <circle cx="68" y="32" r="1.5" fill="currentColor" opacity="0.5">
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.5;0.1;0.5"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </circle>
+                                        <circle cx="75" y="70" r="1.8" fill="currentColor" opacity="0.6">
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.6;0.2;0.6"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </circle>
                                     </svg>
+                                </div>
+                                <div class="decorative-elements">
+                                    <div class="deco-circle"></div>
+                                    <div class="deco-line"></div>
+                                    <div class="deco-dot"></div>
+                                    <div class="deco-circle-small"></div>
                                 </div>
                             </div>
                         </div>
@@ -1392,14 +1804,134 @@
                                 </p>
                                 <a href="#contact" class="service-link">Explore →</a>
                             </div>
-                            <div class="service-visual">
-                                <div class="service-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <rect x="3" y="3" width="7" height="7" />
-                                        <rect x="14" y="3" width="7" height="7" />
-                                        <rect x="14" y="14" width="7" height="7" />
-                                        <rect x="3" y="14" width="7" height="7" />
+                            <div class="service-visual combo">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Layered Squares -->
+                                        <rect
+                                            x="28"
+                                            y="28"
+                                            width="28"
+                                            height="28"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.3"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="translate"
+                                                values="0,0; 2,-2; 0,0"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="42"
+                                            y="42"
+                                            width="28"
+                                            height="28"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.5"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="translate"
+                                                values="0,0; 2,-2; 0,0"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="56"
+                                            y="56"
+                                            width="28"
+                                            height="28"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.7"
+                                            fill="currentColor"
+                                            fill-opacity="0.1"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="translate"
+                                                values="0,0; 2,-2; 0,0"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+
+                                        <!-- Center Diamond -->
+                                        <path d="M 70 70 L 76 64 L 82 70 L 76 76 Z" fill="currentColor" opacity="0.9">
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="rotate"
+                                                from="0 76 70"
+                                                to="360 76 70"
+                                                dur="20s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </path>
+
+                                        <!-- Connection Lines -->
+                                        <line
+                                            x1="42"
+                                            y1="42"
+                                            x2="56"
+                                            y2="56"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            opacity="0.4"
+                                            stroke-dasharray="3,3"
+                                        >
+                                            <animate
+                                                attributeName="stroke-dashoffset"
+                                                values="0;6"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </line>
+                                        <line
+                                            x1="56"
+                                            y1="70"
+                                            x2="70"
+                                            y2="84"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            opacity="0.4"
+                                            stroke-dasharray="3,3"
+                                        >
+                                            <animate
+                                                attributeName="stroke-dashoffset"
+                                                values="0;6"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </line>
+
+                                        <!-- Palette -->
+                                        <circle
+                                            cx="38"
+                                            cy="82"
+                                            r="7"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.6"
+                                        />
+                                        <circle cx="35" cy="80" r="1.8" fill="currentColor" opacity="0.7" />
+                                        <circle cx="41" cy="80" r="1.8" fill="currentColor" opacity="0.7" />
+                                        <circle cx="38" cy="85" r="1.8" fill="currentColor" opacity="0.7" />
                                     </svg>
+                                </div>
+                                <div class="decorative-elements">
+                                    <div class="deco-circle"></div>
+                                    <div class="deco-line"></div>
+                                    <div class="deco-dot"></div>
+                                    <div class="deco-circle-small"></div>
                                 </div>
                             </div>
                         </div>
@@ -1415,11 +1947,166 @@
                                 </p>
                                 <a href="#contact" class="service-link">Explore →</a>
                             </div>
-                            <div class="service-visual">
-                                <div class="service-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path d="M12 10a2 2 0 0 0-2 2c0 1.07.5 2 2 3 1.5-1 2-1.93 2-3a2 2 0 0 0-2-2z" />
+                            <div class="service-visual combo">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Browser Window -->
+                                        <rect
+                                            x="22"
+                                            y="28"
+                                            width="64"
+                                            height="50"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                        />
+                                        <circle cx="30" cy="36" r="2" fill="currentColor" opacity="0.5" />
+                                        <circle cx="37" cy="36" r="2" fill="currentColor" opacity="0.5" />
+                                        <circle cx="44" cy="36" r="2" fill="currentColor" opacity="0.5" />
+                                        <line
+                                            x1="22"
+                                            y1="45"
+                                            x2="86"
+                                            y2="45"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            opacity="0.3"
+                                        />
+
+                                        <!-- UI Elements -->
+                                        <rect
+                                            x="30"
+                                            y="53"
+                                            width="18"
+                                            height="11"
+                                            rx="2"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.6"
+                                        >
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.6;0.8;0.6"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="55"
+                                            y="53"
+                                            width="24"
+                                            height="4"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+                                        <rect
+                                            x="55"
+                                            y="61"
+                                            width="18"
+                                            height="4"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+
+                                        <!-- Mobile Device -->
+                                        <rect
+                                            x="62"
+                                            y="68"
+                                            width="20"
+                                            height="32"
+                                            rx="3"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.7"
+                                        />
+                                        <line
+                                            x1="72"
+                                            y1="95"
+                                            x2="72"
+                                            y2="97"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.5"
+                                            stroke-linecap="round"
+                                        />
+
+                                        <!-- Screen Content -->
+                                        <rect
+                                            x="66"
+                                            y="73"
+                                            width="12"
+                                            height="7"
+                                            rx="1"
+                                            fill="currentColor"
+                                            opacity="0.5"
+                                        >
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.5;0.7;0.5"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </rect>
+                                        <rect
+                                            x="66"
+                                            y="83"
+                                            width="9"
+                                            height="3"
+                                            rx="1"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+                                        <rect
+                                            x="66"
+                                            y="89"
+                                            width="11"
+                                            height="3"
+                                            rx="1"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+                                        <rect
+                                            x="66"
+                                            y="95"
+                                            width="7"
+                                            height="3"
+                                            rx="1"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+
+                                        <!-- Cursor -->
+                                        <circle
+                                            cx="52"
+                                            cy="63"
+                                            r="5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.8"
+                                        >
+                                            <animate
+                                                attributeName="r"
+                                                values="5;7;5"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.8;0.3;0.8"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </circle>
                                     </svg>
+                                </div>
+                                <div class="decorative-elements">
+                                    <div class="deco-circle"></div>
+                                    <div class="deco-line"></div>
+                                    <div class="deco-dot"></div>
+                                    <div class="deco-circle-small"></div>
                                 </div>
                             </div>
                         </div>
