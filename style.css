@@ -1435,7 +1435,49 @@ a {
     z-index: 1;
     font-weight: 400;
 }
+.cta__form {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
 
+.cta__input {
+    flex: 1;
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--text-sm);
+    border: 2px solid hsla(255, 255%, 255%, 0.2);
+    border-radius: 9999px;
+    background: hsla(0, 0%, 100%, 0.1);
+    color: hsl(var(--primary-foreground));
+    transition: var(--transition);
+    outline: none;
+    min-width: 0;
+}
+
+.cta__input::placeholder {
+    color: hsla(255, 255%, 255%, 0.6);
+}
+
+.cta__input:focus {
+    border-color: hsla(255, 255%, 255%, 0.6);
+    background: hsla(0, 0%, 100%, 0.15);
+    box-shadow: 0 0 0 4px hsla(0, 0%, 0%, 0.2);
+}
+
+/* Hide buttons on mobile if form is added */
+@media (max-width: 640px) {
+    .cta__form {
+        flex-direction: column;
+    }
+    .cta__btn--primary {
+        width: 100%;
+    }
+}
 .cta__actions {
     display: inline-flex; /* Tighter button grouping */
     gap: var(--space-4);
