@@ -37,8 +37,12 @@
     --space-16: 4rem;
 
     /* Typography */
-    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --font-mono: "JetBrains Mono", monospace;
+    --font-sans:
+        "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+    --font-mono:
+        "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+        monospace;
 
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
@@ -1063,7 +1067,7 @@ a {
 /* 3. Brand Identity (Bottom-Right, Small) */
 .expertise__card:nth-child(3) {
     grid-column: 9 / span 4;
-    grid-row: 2; 
+    grid-row: 2;
     background: hsl(var(--secondary));
     border-color: transparent;
 }
@@ -1071,7 +1075,7 @@ a {
 /* 4. UI/UX Design (Bottom-Left, Wide) */
 .expertise__card--accent {
     grid-column: span 8;
-    grid-row: 2; 
+    grid-row: 2;
     background: hsl(var(--accent));
     border-color: transparent;
 }
