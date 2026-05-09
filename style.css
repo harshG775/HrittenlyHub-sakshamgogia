@@ -1359,7 +1359,7 @@ a {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
-/* CTA SECTION STYLES */
+/* CTA SECTION */
 .cta {
     padding: var(--space-16) 0;
     background: hsl(var(--background));
@@ -1377,14 +1377,16 @@ a {
     padding: var(--space-16) var(--space-12);
     border-radius: var(--radius-lg);
     text-align: center;
-    max-width: 800px;
+    max-width: 900px; /* Slightly wider for better proportions */
     margin: 0 auto;
-    box-shadow: var(--shadow-lg);
+    box-shadow:
+        var(--shadow-lg),
+        0 20px 60px -10px hsla(0, 0%, 0%, 0.3); /* Deeper shadow */
     position: relative;
     overflow: hidden;
 }
 
-/* Subtle gradient overlay */
+/* Subtle gradient overlay - more refined */
 .cta__card::before {
     content: "";
     position: absolute;
@@ -1392,35 +1394,53 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, hsla(0, 0%, 100%, 0.05) 0%, transparent 50%, hsla(0, 0%, 0%, 0.2) 100%);
+    background: linear-gradient(135deg, hsla(0, 0%, 100%, 0.08) 0%, transparent 50%, hsla(0, 0%, 0%, 0.15) 100%);
     pointer-events: none;
+    z-index: 0;
+}
+
+/* Subtle noise texture for depth */
+.cta__card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .cta__title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Larger, bolder */
+    font-weight: 800; /* Extra bold */
     margin-bottom: var(--space-4);
     position: relative;
     z-index: 1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em; /* Tighter tracking */
+    line-height: 1.1;
 }
 
 .cta__description {
     font-size: var(--text-lg);
-    color: hsl(var(--muted));
-    margin-bottom: var(--space-12);
-    max-width: 560px;
+    color: hsla(255, 255%, 255%, 0.7); /* Brighter, more visible */
+    margin-bottom: var(--space-10);
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.6;
+    line-height: 1.7;
     position: relative;
     z-index: 1;
+    font-weight: 400;
 }
 
 .cta__actions {
-    display: flex;
+    display: inline-flex; /* Tighter button grouping */
     gap: var(--space-4);
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
@@ -1433,35 +1453,47 @@ a {
     padding: var(--space-4) var(--space-8);
     font-size: var(--text-sm);
     font-weight: 600;
-    border-radius: var(--radius-lg);
+    border-radius: 9999px; /* Fully pill-shaped */
     text-decoration: none;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     font-family: var(--font-sans);
+    border: 2px solid transparent; /* Consistent border width */
+    min-width: 180px; /* Equal button widths */
 }
 
 .cta__btn--primary {
     background: hsl(var(--background));
     color: hsl(var(--foreground));
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.15);
 }
 
 .cta__btn--primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.2);
     background: hsl(var(--card));
+}
+
+.cta__btn--primary:active {
+    transform: translateY(0);
 }
 
 .cta__btn--secondary {
     background: transparent;
     color: hsl(var(--primary-foreground));
-    border: 1px solid hsla(var(--primary-foreground), 0.3);
+    border: 2px solid hsla(255, 255%, 255%, 0.4); /* More visible border */
+    box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.1);
 }
 
 .cta__btn--secondary:hover {
-    background: hsla(var(--primary-foreground), 0.1);
-    border-color: hsla(var(--primary-foreground), 0.6);
+    background: hsla(255, 255%, 255%, 0.1);
+    border-color: hsla(255, 255%, 255%, 0.8); /* Brighter on hover */
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+}
+
+.cta__btn--secondary:active {
+    transform: translateY(0);
 }
 
 /* Responsive Design */
@@ -1472,15 +1504,18 @@ a {
 
     .cta__card {
         padding: var(--space-12) var(--space-6);
+        margin: 0 var(--space-4); /* Slight margin on mobile */
     }
 
     .cta__actions {
         flex-direction: column;
         gap: var(--space-3);
+        width: 100%;
     }
 
     .cta__btn {
         width: 100%;
+        max-width: 320px;
     }
 }
 
@@ -1497,8 +1532,18 @@ a {
     .cta__card {
         padding: var(--space-8) var(--space-4);
     }
+
+    .cta__btn {
+        padding: var(--space-3) var(--space-6);
+        min-width: auto;
+    }
 }
 
+/* Focus states for accessibility */
+.cta__btn:focus-visible {
+    outline: 2px solid hsl(var(--primary-foreground));
+    outline-offset: 2px;
+}
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* FOOTER SECTION STYLES */
 .footer {
