@@ -633,3 +633,102 @@ a {
         color: hsl(var(--primary-foreground));
     }
 }
+
+
+/* LOGO CLOUD SECTION STYLES */
+.logo-cloud {
+    padding: var(--space-12) 0;
+    background: hsl(var(--background));
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.logo-cloud__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.logo-cloud__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-12);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.logo-cloud__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-cloud__logo {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: hsl(var(--muted-foreground));
+    letter-spacing: 0.02em;
+    opacity: 0.6;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.logo-cloud__logo:hover {
+    opacity: 1;
+    color: hsl(var(--foreground));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-cloud {
+        padding: var(--space-8) 0;
+    }
+
+    .logo-cloud__list {
+        gap: var(--space-8);
+    }
+
+    .logo-cloud__logo {
+        font-size: var(--text-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-cloud__list {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .logo-cloud__item {
+        width: 100%;
+    }
+
+    .logo-cloud__logo {
+        font-size: var(--text-base);
+        opacity: 0.8;
+    }
+}
+
+/* Optional: Animation on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.6;
+        transform: translateY(0);
+    }
+}
+
+.logo-cloud__logo {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.logo-cloud__item:nth-child(1) .logo-cloud__logo { animation-delay: 0.1s; }
+.logo-cloud__item:nth-child(2) .logo-cloud__logo { animation-delay: 0.2s; }
+.logo-cloud__item:nth-child(3) .logo-cloud__logo { animation-delay: 0.3s; }
+.logo-cloud__item:nth-child(4) .logo-cloud__logo { animation-delay: 0.4s; }
+.logo-cloud__item:nth-child(5) .logo-cloud__logo { animation-delay: 0.5s; }
