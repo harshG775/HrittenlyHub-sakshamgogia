@@ -1,396 +1,1537 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>WrittenlyHub | Content That Converts</title>
-        <!-- fonts -->
-        <!-- fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <!--  -->
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <header class="header">
-            <nav class="nav container">
-                <a href="/#home" class="nav-logo">WrittenlyHub.</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WrittenlyHub: Premium content engineering and strategic copywriting for modern brands. Convert readers into customers with data-backed editorial strategy and high-converting content.">
+    <meta name="keywords" content="content marketing, copywriting, content strategy, brand positioning, SaaS content, growth marketing">
+    <meta name="author" content="WrittenlyHub">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a1a">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://writtelyhub.com/">
+    <meta property="og:title" content="WrittenlyHub | Content That Converts Into Growth">
+    <meta property="og:description" content="Premium content engineering and strategic copywriting for modern brands. Convert readers into customers with data-backed editorial strategy.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop">
+    <meta property="og:site_name" content="WrittenlyHub">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WrittenlyHub | Content That Converts Into Growth">
+    <meta name="twitter:description" content="Premium content engineering for modern brands. Strategic copywriting that drives growth.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://writtelyhub.com/">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "WrittenlyHub",
+        "description": "Premium content engineering and strategic copywriting for modern brands",
+        "url": "https://writtelyhub.com/",
+        "logo": "https://writtelyhub.com/logo.png",
+        "contact": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "email": "hello@writtelyhub.com"
+        },
+        "sameAs": [
+            "https://twitter.com/writtelyhub",
+            "https://linkedin.com/company/writtelyhub",
+            "https://dribbble.com/writtelyhub"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Creative Street",
+            "addressLocality": "San Francisco",
+            "addressRegion": "CA",
+            "postalCode": "94105",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+    
+    <style>
+        /* ROOT VARIABLES & RESET
+           
+           COLOR PALETTE STRATEGY:
+           - Primary Background: Warm beige (#ede9e4) - creates premium, sophisticated feel
+           - Text: Dark charcoal (#1f1f1f) - excellent readability on warm background
+           - Accents: Dark gray (#3a3a3a) - professional CTA buttons
+           - Gold accent (#d4a574) - subtle warmth for hover states and details
+           - Creates a cohesive "creative agency" aesthetic (similar to wittypen, content-whale) */
+        :root {
+            /* Colors - Creative Agency Modern Aesthetic */
+            --bg-primary: #ede9e4;        /* Warm beige/cream background */
+            --bg-secondary: #ffffff;       /* White card backgrounds */
+            --text-primary: #1f1f1f;       /* Dark charcoal for headings */
+            --text-secondary: #666666;     /* Medium gray for body text */
+            --text-muted: #999999;         /* Light gray for muted text */
+            --accent-primary: #3a3a3a;     /* Dark gray/charcoal for buttons & CTAs */
+            --accent-secondary: #4a4a4a;   /* Darker gray on hover */
+            --accent-tertiary: #d4a574;    /* Warm gold accent (subtle) */
+            --border-color: #e0dcd6;       /* Subtle warm border */
+            --input-bg: #f9f7f4;           /* Slightly warmer input background */
+            --success: #22c55e;
+            --error: #ef4444;
+            --dark-section: #3f3f3f;       /* Dark sections (manifesto, CTA) */
+            
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --spacing-3xl: 6rem;
+            
+            /* Header */
+            --header-height: 80px;
+            
+            /* Radius */
+            --radius-sm: 0.5rem;
+            --radius-md: 1rem;
+            --radius-lg: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+            
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <span class="hamburger"></span>
-                </button>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#expertise" class="nav-link">Expertise</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#manifesto" class="nav-link">Philosophy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#work" class="nav-link">Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-cta">Start a Project</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + 1rem);
+        }
 
-        <main>
-            <!-- Hero Section -->
-            <section class="hero" id="home">
-                <div class="hero__container container">
-                    <div class="hero__content">
-                        <h1 class="hero__title">
-                            Content <br /><em class="hero__title-emphasis">That Converts</em><br />
-                            Into Growth.
-                        </h1>
-                        <p class="hero__description">
-                            We are a creative agency engineering high-end editorial experiences and strategic content
-                            for modern brands.
-                        </p>
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding-top: var(--header-height);
+        }
 
-                        <form class="hero__form" id="hero-form">
-                            <input
-                                type="email"
-                                class="hero__input"
-                                placeholder="Enter your work email"
-                                required
-                                aria-label="Work email"
-                            />
-                            <button type="submit" class="hero__button">Get Proposal</button>
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+
+        p {
+            color: var(--text-secondary);
+            max-width: 65ch;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* UTILITIES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section-padding {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: var(--spacing-2xl) 0;
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* HEADER & NAVIGATION */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(237, 233, 228, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+            background: rgba(237, 233, 228, 0.95);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding: 0 var(--spacing-md);
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--accent-primary);
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            background: #4a4a4a;
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 0.35rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 1.5rem;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: translateY(0.55rem) rotate(45deg);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: translateY(-0.55rem) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--spacing-2xl);
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-item {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: var(--transition);
+            }
+
+            .nav-menu.active .nav-item {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu.active .nav-item:nth-child(4) { transition-delay: 0.25s; }
+
+            .nav-link {
+                font-size: 1.5rem;
+            }
+
+            .nav-cta {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* HERO SECTION */
+        .hero {
+            background: var(--bg-primary);
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .hero-content em {
+            font-style: italic;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            display: flex;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-lg);
+            max-width: 500px;
+        }
+
+        .form-input {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-full);
+            background: var(--input-bg);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(45, 45, 45, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-button {
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            background: #4a4a4a;
+            color: white;
+        }
+
+        .form-button:active {
+            transform: translateY(0);
+        }
+
+        .form-message {
+            margin-top: var(--spacing-sm);
+            font-size: 0.875rem;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .form-message.success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #15803d;
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #991b1b;
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .trust-section {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .trust-avatars {
+            display: flex;
+            position: relative;
+        }
+
+        .trust-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+            object-fit: cover;
+            margin-left: -12px;
+            transition: var(--transition);
+        }
+
+        .trust-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .trust-avatar:hover {
+            transform: translateY(-4px) scale(1.05);
+            z-index: 10;
+        }
+
+        .trust-text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            background: var(--bg-secondary);
+        }
+
+        .stat-badge {
+            position: absolute;
+            bottom: var(--spacing-lg);
+            left: var(--spacing-lg);
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-content h1 {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .form-group {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .trust-section {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: var(--spacing-2xl) 0 var(--spacing-xl);
+            }
+
+            .form-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .form-button {
+                width: 100%;
+            }
+
+            .stat-badge {
+                font-size: 1rem;
+                padding: var(--spacing-xs) var(--spacing-sm);
+                bottom: var(--spacing-md);
+                left: var(--spacing-md);
+            }
+
+            .trust-section {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* LOGO CLOUD */
+        .logo-cloud {
+            background: var(--bg-primary);
+            padding: var(--spacing-2xl) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-xl) var(--spacing-3xl);
+            list-style: none;
+        }
+
+        .logo-item {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .logo-list {
+                gap: var(--spacing-lg) var(--spacing-xl);
+            }
+
+            .logo-item {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* EXPERTISE SECTION */
+        .expertise {
+            background: var(--bg-primary);
+        }
+
+        .expertise-header {
+            max-width: 650px;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .expertise-title {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .expertise-title em {
+            font-style: italic;
+            font-weight: 500;
+            color: var(--text-secondary);
+            display: block;
+            margin-top: var(--spacing-xs);
+        }
+
+        .expertise-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .expertise-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-2xl);
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+        }
+
+        .service-row.reverse {
+            direction: rtl;
+        }
+
+        .service-row.reverse > * {
+            direction: ltr;
+        }
+
+        .service-content {
+            max-width: 450px;
+        }
+
+        .service-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .service-title {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .service-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-primary);
+            border-bottom: 1px solid transparent;
+            transition: var(--transition);
+            padding-bottom: 2px;
+        }
+
+        .service-link:hover {
+            border-bottom-color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+        .service-visual {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .service-row:hover .service-visual {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            opacity: 0.4;
+            transition: var(--transition);
+        }
+
+        .service-row:hover .service-icon {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        .service-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        @media (max-width: 968px) {
+            .service-row,
+            .service-row.reverse {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+                direction: ltr;
+            }
+
+            .service-row.reverse > * {
+                direction: ltr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .service-title {
+                font-size: 1.5rem;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .service-icon svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* MANIFESTO SECTION */
+        .manifesto {
+            background: #3f3f3f;
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto::before {
+            content: 'PHILOSOPHY';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(4rem, 15vw, 8rem);
+            font-weight: 800;
+            opacity: 0.05;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .manifesto-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .manifesto-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--spacing-lg);
+            color: white;
+        }
+
+        .manifesto-title em {
+            font-style: italic;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .manifesto-description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* PROCESS SECTION */
+        .process {
+            background: var(--bg-primary);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .process-title {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-2xl);
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+        }
+
+        .step.reverse .step-visual {
+            order: -1;
+        }
+
+        .step-number {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            opacity: 0.15;
+            line-height: 0.8;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .step-title {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .step-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .step-visual {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4/3;
+            background: var(--bg-secondary);
+        }
+
+        .step-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 968px) {
+            .step {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+
+            .step.reverse .step-visual {
+                order: 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .step-number {
+                font-size: 5rem;
+            }
+
+            .step-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* CTA SECTION */
+        .cta {
+            background: var(--bg-primary);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #3f3f3f 0%, #4a4a4a 100%);
+            color: white;
+            padding: var(--spacing-3xl) var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--spacing-md);
+            font-weight: 800;
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: var(--spacing-xs);
+            max-width: 500px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .cta-input {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            min-width: 0;
+        }
+
+        .cta-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .cta-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.2);
+        }
+
+        .cta-button {
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: white;
+            color: #3f3f3f;
+            border: none;
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: #f0f0f0;
+            color: #1f1f1f;
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+            .cta-card {
+                padding: var(--spacing-2xl) var(--spacing-lg);
+            }
+
+            .cta-form {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* FOOTER */
+        .footer {
+            background: #fafaf8;
+            border-top: 1px solid var(--border-color);
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
+            box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 320px;
+        }
+
+        .footer-column h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-body);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-secondary);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+        /* ACCESSIBILITY & RESPONSIVE */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus visible for keyboard navigation */
+        *:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+    </style>
+
+    <title>WrittenlyHub | Content That Converts Into Growth</title>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav-logo">WrittenlyHub.</a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li class="nav-item"><a href="#manifesto" class="nav-link">Philosophy</a></li>
+                <li class="nav-item"><a href="#work" class="nav-link">Work</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-cta">Start a Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section-padding" id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>Content <br><em>That Converts</em><br>Into Growth.</h1>
+                        <p class="hero-description">We are a creative agency engineering high-end editorial experiences and strategic content for modern brands. Transform your message into measurable growth.</p>
+                        
+                        <form class="form-group" id="heroForm" novalidate>
+                            <input type="email" class="form-input" name="email" placeholder="Enter your work email" required aria-label="Email address" aria-describedby="emailHelp">
+                            <button type="submit" class="form-button">Get Proposal</button>
+                            <div class="form-message" id="heroMessage"></div>
                         </form>
 
-                        <div class="hero__trust">
-                            <div class="hero__avatars">
-                                <img
-                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
-                                    alt="User Avatar"
-                                    class="hero__avatar"
-                                />
-                                <img
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-                                    alt="User Avatar"
-                                    class="hero__avatar"
-                                />
-                                <img
-                                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
-                                    alt="User Avatar"
-                                    class="hero__avatar"
-                                />
+                        <div class="trust-section">
+                            <div class="trust-avatars">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Client avatar 1" class="trust-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Client avatar 2" class="trust-avatar">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Client avatar 3" class="trust-avatar">
                             </div>
-                            <p class="hero__trust-text">TRUSTED BY 100+ MODERN TEAMS</p>
+                            <p class="trust-text">Trusted by 100+ Modern Teams</p>
                         </div>
                     </div>
 
-                    <div class="hero__visual">
-                        <figure class="hero__figure">
-                            <img
-                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
-                                alt="Dashboard visualization showing growth metrics"
-                                class="hero__image"
-                            />
-                            <figcaption class="hero__stat">+240%</figcaption>
+                    <div class="hero-visual">
+                        <figure style="margin: 0; position: relative; width: 100%; max-width: 520px;">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Dashboard visualization showing growth metrics and analytics" class="hero-image" loading="lazy">
+                            <figcaption class="stat-badge">+240%</figcaption>
                         </figure>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Logo Cloud -->
-            <section class="logo-cloud">
-                <div class="logo-cloud__container container">
-                    <ul class="logo-cloud__list">
-                        <li class="logo-cloud__item">
-                            <span class="logo-cloud__logo">ACME Corp</span>
-                        </li>
-                        <li class="logo-cloud__item">
-                            <span class="logo-cloud__logo">GlobalBank</span>
-                        </li>
-                        <li class="logo-cloud__item">
-                            <span class="logo-cloud__logo">Nirvana</span>
-                        </li>
-                        <li class="logo-cloud__item">
-                            <span class="logo-cloud__logo">Black Inc.</span>
-                        </li>
-                        <li class="logo-cloud__item">
-                            <span class="logo-cloud__logo">Wayne Ent.</span>
-                        </li>
-                    </ul>
+        <!-- Logo Cloud -->
+        <section class="logo-cloud">
+            <div class="container">
+                <ul class="logo-list">
+                    <li class="logo-item">ACME Corp</li>
+                    <li class="logo-item">GlobalBank</li>
+                    <li class="logo-item">Nirvana</li>
+                    <li class="logo-item">Black Inc.</li>
+                    <li class="logo-item">Wayne Ent.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section class="expertise section-padding" id="expertise">
+            <div class="container">
+                <div class="expertise-header">
+                    <h2 class="expertise-title">Not just writers.<br><em>Growth Architects.</em></h2>
+                    <p class="expertise-subtitle">Stop settling for generic articles. We craft authoritative, SEO-optimized content designed specifically to convert readers into customers.</p>
                 </div>
-            </section>
 
-            <!-- Expertise Section -->
-            <section class="expertise" id="expertise">
-                <div class="expertise__container container">
-                    <header class="expertise__header">
-                        <h2 class="expertise__title">
-                            Not just writers. <br />
-                            <span class="expertise__title--highlight">Growth Architects.</span>
-                        </h2>
-                        <p class="expertise__subtitle">
-                            Stop settling for generic articles. We craft authoritative, SEO-optimized content designed
-                            specifically to convert readers into customers.
-                        </p>
-                    </header>
-
-                    <div class="expertise__list">
-                        <!-- 01 / Strategic Content -->
-                        <div class="expertise__row">
-                            <div class="expertise__row-content">
-                                <div class="expertise__row-label">01 / STRATEGY</div>
-                                <h3 class="expertise__row-title">Strategic Content</h3>
-                                <p class="expertise__row-desc">
-                                    Data-backed editorial strategy mapped to your buyer's journey to build industry
-                                    authority and drive organic growth.
-                                </p>
-                                <a href="#" class="expertise__row-link">EXPLORE &rarr;</a>
-                            </div>
-                            <div class="expertise__row-visual">
-                                <!-- Placeholder for Icon (Matches image style) -->
-                                <div class="expertise__row-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="48"
-                                        height="48"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <circle cx="12" cy="12" r="10" />
-                                        <circle cx="12" cy="12" r="6" />
-                                        <circle cx="12" cy="12" r="2" />
-                                    </svg>
-                                </div>
+                <div class="expertise-grid">
+                    <!-- Service 1: Strategic Content -->
+                    <div class="service-row">
+                        <div class="service-content">
+                            <span class="service-label">01 / Strategy</span>
+                            <h3 class="service-title">Strategic Content</h3>
+                            <p class="service-description">Data-backed editorial strategy mapped to your buyer's journey to build industry authority and drive organic growth.</p>
+                            <a href="#contact" class="service-link">Explore →</a>
+                        </div>
+                        <div class="service-visual">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- 02 / Copywriting (Reverse Layout) -->
-                        <div class="expertise__row expertise__row--reverse">
-                            <div class="expertise__row-content">
-                                <div class="expertise__row-label expertise__row-label--blue">02 / CREATIVE</div>
-                                <h3 class="expertise__row-title">Copywriting</h3>
-                                <p class="expertise__row-desc">
-                                    High-converting landing pages and ad copy that clearly communicates your value
-                                    proposition and boosts conversions.
-                                </p>
-                                <a href="#" class="expertise__row-link">EXPLORE &rarr;</a>
-                            </div>
-                            <div class="expertise__row-visual">
-                                <div class="expertise__row-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="48"
-                                        height="48"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
-                                    </svg>
-                                </div>
+                    <!-- Service 2: Copywriting -->
+                    <div class="service-row reverse">
+                        <div class="service-content">
+                            <span class="service-label">02 / Creative</span>
+                            <h3 class="service-title">Copywriting</h3>
+                            <p class="service-description">High-converting landing pages and ad copy that clearly communicates your value proposition and boosts conversions.</p>
+                            <a href="#contact" class="service-link">Explore →</a>
+                        </div>
+                        <div class="service-visual">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- 03 / Brand Identity -->
-                        <div class="expertise__row">
-                            <div class="expertise__row-content">
-                                <div class="expertise__row-label">03 / IDENTITY</div>
-                                <h3 class="expertise__row-title">Brand Identity</h3>
-                                <p class="expertise__row-desc">
-                                    Visual and verbal positioning that makes your startup unforgettable. We build the
-                                    voice behind the visuals.
-                                </p>
-                                <a href="#" class="expertise__row-link">EXPLORE &rarr;</a>
-                            </div>
-                            <div class="expertise__row-visual">
-                                <div class="expertise__row-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="48"
-                                        height="48"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <rect x="3" y="3" width="7" height="7" />
-                                        <rect x="14" y="3" width="7" height="7" />
-                                        <rect x="14" y="14" width="7" height="7" />
-                                        <rect x="3" y="14" width="7" height="7" />
-                                    </svg>
-                                </div>
+                    <!-- Service 3: Brand Identity -->
+                    <div class="service-row">
+                        <div class="service-content">
+                            <span class="service-label">03 / Identity</span>
+                            <h3 class="service-title">Brand Identity</h3>
+                            <p class="service-description">Visual and verbal positioning that makes your startup unforgettable. We build the voice behind the visuals.</p>
+                            <a href="#contact" class="service-link">Explore →</a>
+                        </div>
+                        <div class="service-visual">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- 04 / UI/UX Design (Reverse Layout) -->
-                        <div class="expertise__row expertise__row--reverse">
-                            <div class="expertise__row-content">
-                                <div class="expertise__row-label expertise__row-label--blue">04 / DESIGN</div>
-                                <h3 class="expertise__row-title">UI/UX Design</h3>
-                                <p class="expertise__row-desc">
-                                    Beautiful, functional interfaces that convert visitors into loyal customers. Design
-                                    with purpose.
-                                </p>
-                                <a href="#" class="expertise__row-link">EXPLORE &rarr;</a>
-                            </div>
-                            <div class="expertise__row-visual">
-                                <div class="expertise__row-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="48"
-                                        height="48"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path d="M12 10a2 2 0 0 0-2 2c0 1.07.5 2 2 3 1.5-1 2-1.93 2-3a2 2 0 0 0-2-2z" />
-                                        <path d="M12 6a2 2 0 0 0-2 2c0 1.07.5 2 2 3 1.5-1 2-1.93 2-3a2 2 0 0 0-2-2z" />
-                                        <path d="M12 2a2 2 0 0 0-2 2c0 1.07.5 2 2 3 1.5-1 2-1.93 2-3a2 2 0 0 0-2-2z" />
-                                        <path d="M12 14a2 2 0 0 0-2 2c0 1.07.5 2 2 3 1.5-1 2-1.93 2-3a2 2 0 0 0-2-2z" />
-                                        <path d="M12 18a2 2 0 0 0-2 2c0 1.07.5 2 2 3 1.5-1 2-1.93 2-3a2 2 0 0 0-2-2z" />
-                                    </svg>
-                                </div>
+                    <!-- Service 4: UI/UX Design -->
+                    <div class="service-row reverse">
+                        <div class="service-content">
+                            <span class="service-label">04 / Design</span>
+                            <h3 class="service-title">UI/UX Design</h3>
+                            <p class="service-description">Beautiful, functional interfaces that convert visitors into loyal customers. Design with purpose and precision.</p>
+                            <a href="#contact" class="service-link">Explore →</a>
+                        </div>
+                        <div class="service-visual">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 0-2 2c0 1.07.5 2 2 3 1.5-1 2-1.93 2-3a2 2 0 0 0-2-2z"/></svg>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Manifesto / Quote Section -->
-            <section class="manifesto" id="manifesto">
-                <div class="manifesto__container container">
-                    <div class="manifesto__watermark" aria-hidden="true">WRITTEN</div>
-                    <div class="manifesto__content">
-                        <h2 class="manifesto__title">
-                            We believe in content that
-                            <em class="manifesto__emphasis">respects the reader's intelligence.</em>
-                        </h2>
-                        <p class="manifesto__description">
-                            No fluff. No generic AI output. Just deeply researched, beautifully presented narratives
-                            designed to elevate your brand above the noise.
-                        </p>
-                    </div>
+        <!-- Manifesto Section -->
+        <section class="manifesto section-padding" id="manifesto">
+            <div class="container">
+                <div class="manifesto-content">
+                    <h2 class="manifesto-title">We believe in content that <em>respects the reader's intelligence.</em></h2>
+                    <p class="manifesto-description">No fluff. No generic AI output. Just deeply researched, beautifully presented narratives designed to elevate your brand above the noise.</p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- How We Work Section -->
-            <section class="process" id="work">
-                <div class="process__container container">
-                    <h2 class="process__title">How We Work.</h2>
+        <!-- Process Section -->
+        <section class="process section-padding" id="work">
+            <div class="container">
+                <h2 class="process-title">How We Work.</h2>
+                
+                <div class="process-steps">
+                    <article class="step">
+                        <div>
+                            <div class="step-number">01</div>
+                            <h3 class="step-title">Discovery & Strategy</h3>
+                            <p class="step-description">We dive deep into your product, market, and audience to uncover the unique angles that will drive growth and resonate with your ideal customers.</p>
+                        </div>
+                        <div class="step-visual">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" alt="Team collaborating on strategy and planning" loading="lazy">
+                        </div>
+                    </article>
 
-                    <div class="process__list">
-                        <!-- Step 01: Text Left, Image Right -->
-                        <article class="process__step">
-                            <div class="process__content">
-                                <span class="process__number" aria-hidden="true">01</span>
-                                <h3 class="process__heading">Discovery & Strategy</h3>
-                                <p class="process__description">
-                                    We dive deep into your product, market, and audience to uncover the unique angles
-                                    that will drive growth.
-                                </p>
-                            </div>
-                            <div class="process__visual">
-                                <img
-                                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop"
-                                    alt="Team collaborating on strategy"
-                                    class="process__image"
-                                />
-                            </div>
-                        </article>
-
-                        <!-- Step 02: Image Left, Text Right -->
-                        <article class="process__step process__step--reverse">
-                            <div class="process__visual">
-                                <img
-                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
-                                    alt="Art direction visualization"
-                                    class="process__image"
-                                />
-                            </div>
-                            <div class="process__content">
-                                <span class="process__number" aria-hidden="true">02</span>
-                                <h3 class="process__heading">Art Direction</h3>
-                                <p class="process__description">
-                                    Our writers and designers collaborate to build immersive narratives that perform and
-                                    look beautiful.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
+                    <article class="step reverse">
+                        <div class="step-visual">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Art direction and creative visualization" loading="lazy">
+                        </div>
+                        <div>
+                            <div class="step-number">02</div>
+                            <h3 class="step-title">Art Direction</h3>
+                            <p class="step-description">Our writers and designers collaborate to build immersive narratives that perform and look beautiful. Every word, every pixel matters.</p>
+                        </div>
+                    </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- CTA Section -->
-            <section class="cta" id="contact">
-                <div class="cta__container container">
-                    <div class="cta__card">
-                        <h2 class="cta__title">Ready to scale?</h2>
-                        <p class="cta__description">
-                            Stop losing leads to generic content. Let's build a premium growth engine for your brand.
-                        </p>
-                        <form class="cta__form" id="cta-form">
-                            <input
-                                type="email"
-                                class="cta__input"
-                                placeholder="Enter your work email"
-                                required
-                                aria-label="Work email"
-                            />
-                            <button type="submit" class="cta__btn cta__btn--primary">Get Proposal</button>
+        <!-- CTA Section -->
+        <section class="cta section-padding" id="contact">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Ready to scale?</h2>
+                        <p class="cta-description">Stop losing leads to generic content. Let's build a premium growth engine for your brand today.</p>
+                        
+                        <form class="cta-form" id="ctaForm" novalidate>
+                            <input type="email" class="cta-input" name="email" placeholder="Enter your work email" required aria-label="Work email" aria-describedby="ctaHelp">
+                            <button type="submit" class="cta-button">Get Proposal</button>
+                            <div class="form-message" id="ctaMessage"></div>
                         </form>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
 
-        <!-- Footer Section -->
-        <footer class="footer">
-            <div class="footer__container container">
-                <div class="footer__brand">
-                    <a href="/" class="footer__logo">WrittenlyHub.</a>
-                    <p class="footer__tagline">
-                        Premium content engineering for modern startups and forward-thinking brands.
-                    </p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>WrittenlyHub.</h3>
+                    <p class="footer-tagline">Premium content engineering and strategic copywriting for modern startups and forward-thinking brands.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#expertise">Services</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
 
-                <nav class="footer__nav" aria-label="Footer navigation">
-                    <div class="footer__column">
-                        <h4 class="footer__heading">Company</h4>
-                        <ul class="footer__list">
-                            <li><a href="#work" class="footer__link">Work</a></li>
-                            <li><a href="#services" class="footer__link">Services</a></li>
-                            <li><a href="#contact" class="footer__link">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__column">
-                        <h4 class="footer__heading">Socials</h4>
-                        <ul class="footer__list">
-                            <li><a href="#twitter" class="footer__link">Twitter</a></li>
-                            <li><a href="#linkedin" class="footer__link">LinkedIn</a></li>
-                            <li><a href="#dribbble" class="footer__link">Dribbble</a></li>
-                        </ul>
-                    </div>
-                </nav>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble</a></li>
+                    </ul>
+                </div>
             </div>
-        </footer>
 
-        <script src="script.js" />
-    </body>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WrittenlyHub. All rights reserved.</p>
+                <div>
+                    <a href="#" style="color: var(--text-muted); margin-right: var(--spacing-lg);">Privacy Policy</a>
+                    <a href="#" style="color: var(--text-muted);">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // ====================================================================
+        // FORM VALIDATION & SUBMISSION
+        // ====================================================================
+        const validateEmail = (email) => {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        };
+
+        const showMessage = (formId, messageId, message, type) => {
+            const messageEl = document.getElementById(messageId);
+            messageEl.textContent = message;
+            messageEl.className = `form-message ${type}`;
+            setTimeout(() => {
+                messageEl.className = 'form-message';
+            }, 5000);
+        };
+
+        document.getElementById('heroForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[name="email"]').value.trim();
+            
+            if (!email) {
+                showMessage('heroForm', 'heroMessage', 'Please enter your email', 'error');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showMessage('heroForm', 'heroMessage', 'Please enter a valid email', 'error');
+                return;
+            }
+            
+            showMessage('heroForm', 'heroMessage', '✓ We\'ll be in touch soon!', 'success');
+            e.target.reset();
+        });
+
+        document.getElementById('ctaForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[name="email"]').value.trim();
+            
+            if (!email) {
+                showMessage('ctaForm', 'ctaMessage', 'Please enter your email', 'error');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showMessage('ctaForm', 'ctaMessage', 'Please enter a valid email', 'error');
+                return;
+            }
+            
+            showMessage('ctaForm', 'ctaMessage', '✓ We\'ll be in touch soon!', 'success');
+            e.target.reset();
+        });
+
+        // ====================================================================
+        // MOBILE NAVIGATION
+        // ====================================================================
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
+        const header = document.getElementById('header');
+
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ====================================================================
+        // HEADER SCROLL EFFECT
+        // ====================================================================
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
 </html>
