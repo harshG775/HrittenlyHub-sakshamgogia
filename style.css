@@ -1,5 +1,6 @@
 /* style.css */
 :root {
+    /* Color Palette */
     --background: 40 24% 96%;
     --foreground: 0 0% 10%;
 
@@ -13,7 +14,7 @@
     --secondary-foreground: 0 0% 10%;
 
     --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 38%;
 
     --accent: 260 20% 95%;
     --accent-foreground: 0 0% 10%;
@@ -22,11 +23,23 @@
     --input: 0 0% 88%;
     --ring: 0 0% 10%;
 
-    --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    /* Layout & Spacing */
+    --header-height: 80px;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-14: 3.5rem;
+    --space-16: 4rem;
 
+    /* Typography */
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
 
-    /* Font Sizes */
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
@@ -35,15 +48,7 @@
     --text-2xl: 1.5rem;
     --text-4xl: 2.5rem;
 
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-
+    /* UI Tokens */
     --radius: 1rem;
     --radius-lg: 1.5rem;
     --radius-md: 0.75rem;
@@ -52,8 +57,9 @@
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-    --transition: all 0.2s ease;
+    --shadow-focus: 0 0 0 3px hsla(var(--primary), 0.2);
+    --transition:
+        background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 /* RESET */
@@ -62,32 +68,25 @@
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-* {
     margin: 0;
     padding: 0;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
     -webkit-text-size-adjust: 100%;
 }
 
 body {
     min-height: 100vh;
-
     background: hsl(var(--background));
     color: hsl(var(--foreground));
-
     font-family: var(--font-sans);
     line-height: 1.5;
-
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-
-    /*  */
-    padding-top: 80px;
+    padding-top: var(--header-height); /* Dynamic header spacing */
 }
 
 /* MEDIA */
@@ -110,19 +109,56 @@ h5,
 h6,
 p {
     overflow-wrap: break-word;
+    text-wrap: balance;
+}
+
+@supports not (text-wrap: balance) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: pretty;
+    }
 }
 
 h1 {
-    font-size: var(--text-4xl);
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 h2 {
-    font-size: var(--text-2xl);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 p {
     color: hsl(var(--muted-foreground));
+    max-width: 65ch;
+}
+
+/* Keyboard focus visibility */
+:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Respect OS reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* FORMS */
@@ -131,6 +167,7 @@ button,
 textarea,
 select {
     font: inherit;
+    accent-color: hsl(var(--primary));
 }
 
 button {
@@ -423,11 +460,11 @@ a {
 
 .hero__input {
     flex: 1;
-    padding: var(--space-4) var(--space-5);
-    font-size: var(--text-base);
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--text-sm);
     font-family: var(--font-sans);
     border: 1px solid hsl(var(--border));
-    border-radius: var(--radius-lg);
+    border-radius: 9999px; /* Pill shape */
     background: hsl(var(--card));
     color: hsl(var(--foreground));
     transition: var(--transition);
@@ -444,18 +481,18 @@ a {
 }
 
 .hero__button {
-    padding: var(--space-4) var(--space-6);
+    padding: var(--space-3) var(--space-6);
     font-size: var(--text-sm);
     font-weight: 600;
     font-family: var(--font-sans);
     background: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
     border: none;
-    border-radius: var(--radius-lg);
+    border-radius: 9999px; /* Pill shape */
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
 }
 
 .hero__button:hover {
@@ -532,12 +569,12 @@ a {
 
 .hero__stat {
     position: absolute;
-    bottom: var(--space-6);
-    left: var(--space-6);
-    padding: var(--space-3) var(--space-5);
+    bottom: var(--space-8);
+    left: var(--space-8);
+    padding: var(--space-3) var(--space-6);
     background: hsl(var(--card));
     color: hsl(var(--foreground));
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: 700;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
@@ -780,8 +817,7 @@ a {
 /* Bento Grid Layout */
 .expertise__grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
 }
 
