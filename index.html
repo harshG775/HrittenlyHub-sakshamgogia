@@ -93,19 +93,19 @@
            - Creates a cohesive "creative agency" aesthetic (similar to wittypen, content-whale) */
             :root {
                 /* Colors - Creative Agency Modern Aesthetic */
-                --bg-primary: #ede9e4; /* Warm beige/cream background */
-                --bg-secondary: #ffffff; /* White card backgrounds */
-                --text-primary: #1f1f1f; /* Dark charcoal for headings */
+                --bg-primary: #fafaf9; /* Warm off-white */
+                --bg-secondary: #ffffff; /* Pure white */
+                --text-primary: hsl(243, 75%, 14%); /* Dark charcoal for headings */
                 --text-secondary: #666666; /* Medium gray for body text */
                 --text-muted: #999999; /* Light gray for muted text */
-                --accent-primary: #3a3a3a; /* Dark gray/charcoal for buttons & CTAs */
-                --accent-secondary: #4a4a4a; /* Darker gray on hover */
-                --accent-tertiary: #d4a574; /* Warm gold accent (subtle) */
+                --accent-primary: hsl(243, 75%, 39%); /* Indigo 600 - Primary CTA */
+                --accent-secondary: hsl(245, 58%, 41%); /* Indigo 700 - Hover */
+                --accent-tertiary: hsl(234, 89%, 64%); /* Indigo 400 - Highlights */
                 --border-color: #e0dcd6; /* Subtle warm border */
                 --input-bg: #f9f7f4; /* Slightly warmer input background */
                 --success: #22c55e;
                 --error: #ef4444;
-                --dark-section: #3f3f3f; /* Dark sections (manifesto, CTA) */
+                --dark-section: hsl(243, 75%, 4%); /* Dark sections (manifesto, CTA) */
 
                 /* Typography */
                 --font-display: "Playfair Display", serif;
@@ -1001,7 +1001,7 @@
             /* ---------------------------------------------------------------------------------------------------------- */
             /* MANIFESTO SECTION */
             .manifesto {
-                background: #3f3f3f;
+                background: var(--dark-section);
                 color: white;
                 padding: var(--spacing-3xl) 0;
                 position: relative;
@@ -1141,7 +1141,7 @@
             }
 
             .cta-card {
-                background: linear-gradient(135deg, #3f3f3f 0%, #4a4a4a 100%);
+                background: linear-gradient(135deg, var(--dark-section) 0%, var(--dark-section) 100%);
                 color: white;
                 padding: var(--spacing-3xl) var(--spacing-2xl);
                 border-radius: var(--radius-lg);
