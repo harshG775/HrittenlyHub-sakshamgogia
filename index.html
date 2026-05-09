@@ -175,28 +175,50 @@
             </section>
 
             <!-- How We Work Section -->
-            <section id="process">
-                <h2>How We Work.</h2>
+            <section class="process" id="process">
+                <div class="process__container container">
+                    <h2 class="process__title">How We Work.</h2>
 
-                <article>
-                    <span>01</span>
-                    <h3>Discovery & Strategy</h3>
-                    <p>
-                        We dive deep into your product, market, and audience to uncover the unique angles that will
-                        drive growth.
-                    </p>
-                    <!-- Card background placeholder -->
-                </article>
+                    <div class="process__list">
+                        <!-- Step 01: Text Left, Image Right -->
+                        <article class="process__step">
+                            <div class="process__content">
+                                <span class="process__number" aria-hidden="true">01</span>
+                                <h3 class="process__heading">Discovery & Strategy</h3>
+                                <p class="process__description">
+                                    We dive deep into your product, market, and audience to uncover the unique angles
+                                    that will drive growth.
+                                </p>
+                            </div>
+                            <div class="process__visual">
+                                <img
+                                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop"
+                                    alt="Team collaborating on strategy"
+                                    class="process__image"
+                                />
+                            </div>
+                        </article>
 
-                <article>
-                    <img src="/art-direction-mockup.jpg" alt="Art direction process" />
-                    <span>02</span>
-                    <h3>Art Direction</h3>
-                    <p>
-                        Our writers and designers collaborate to build immersive narratives that perform and look
-                        beautiful.
-                    </p>
-                </article>
+                        <!-- Step 02: Image Left, Text Right -->
+                        <article class="process__step process__step--reverse">
+                            <div class="process__visual">
+                                <img
+                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                                    alt="Art direction visualization"
+                                    class="process__image"
+                                />
+                            </div>
+                            <div class="process__content">
+                                <span class="process__number" aria-hidden="true">02</span>
+                                <h3 class="process__heading">Art Direction</h3>
+                                <p class="process__description">
+                                    Our writers and designers collaborate to build immersive narratives that perform and
+                                    look beautiful.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </section>
 
             <!-- CTA Section -->
