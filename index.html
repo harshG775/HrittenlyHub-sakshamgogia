@@ -85,17 +85,22 @@
             :root {
                 --bg-primary: #fafaf9;
                 --bg-secondary: #ffffff;
-                --text-primary: hsl(243, 75%, 14%);
+                --text-primary: hsl(220, 35%, 13%);
+
                 --text-secondary: #666666;
                 --text-muted: #999999;
-                --accent-primary: hsl(243, 75%, 39%);
-                --accent-secondary: hsl(245, 58%, 41%);
-                --accent-tertiary: hsl(234, 89%, 64%);
+                --accent-primary: hsl(360, 82%, 40%);
+                --accent-secondary: hsl(280, 55%, 45%);
+                --accent-tertiary: hsl(280, 70%, 65%);
                 --border-color: #e0dcd6;
                 --input-bg: #f9f7f4;
                 --success: #22c55e;
                 --error: #ef4444;
-                --dark-section: hsl(243, 75%, 4%);
+                --dark-section: hsl(220, 40%, 7%);
+                /* text selection */
+                --text-selection: hsla(360, 82%, 40%, 0.70);
+                --bg-selection: hsl(0, 0%, 100%);
+
                 --font-display: "Playfair Display", serif;
                 --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
                 --spacing-xs: 0.5rem;
@@ -117,6 +122,18 @@
                 --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
+            ::-moz-selection {
+                background-color: var(--text-selection);
+                color: var(--bg-selection);
+            }
+            ::-webkit-selection {
+                background-color: var(--text-selection);
+                color: var(--bg-selection);
+            }
+            ::selection {
+                background-color: var(--text-selection);
+                color: var(--bg-selection);
+            }
             * {
                 margin: 0;
                 padding: 0;
@@ -137,7 +154,6 @@
                 padding-top: var(--header-height);
                 cursor: none; /* hide default cursor — we use a custom dot */
             }
-
             /* ============================================================
                CUSTOM CURSOR (subtle 8px dot, desktop only)
                ============================================================ */
