@@ -1562,11 +1562,8 @@
             </div>
         </footer>
 
-        <!-- JavaScript -->
         <script>
-            // ====================================================================
             // FORM VALIDATION & SUBMISSION
-            // ====================================================================
             const validateEmail = (email) => {
                 const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return regex.test(email);
@@ -1617,9 +1614,7 @@
                 e.target.reset();
             });
 
-            // ====================================================================
             // MOBILE NAVIGATION
-            // ====================================================================
             const navToggle = document.getElementById("navToggle");
             const navMenu = document.getElementById("navMenu");
             const navLinks = document.querySelectorAll(".nav-link, .nav-cta");
@@ -1660,9 +1655,7 @@
                 }
             });
 
-            // ====================================================================
             // HEADER SCROLL EFFECT
-            // ====================================================================
             window.addEventListener("scroll", () => {
                 if (window.pageYOffset > 50) {
                     header.classList.add("scrolled");
