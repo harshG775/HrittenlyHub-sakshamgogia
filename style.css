@@ -2,7 +2,7 @@
 :root {
     /* Color Palette */
     --background: 30 38% 93%;
-    --foreground: 20 5% 16%;
+    --foreground: 15, 6%, 14%;
 
     --card: 30 38% 100%;
     --card-foreground: 20 5% 26%;
@@ -960,12 +960,10 @@ a {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
-/* =========================================================
-   EXPERTISE SECTION (BENTO GRID FIX - ROW LOCK)
-   ========================================================= */
+/* EXPERTISE SECTION - FIXED */
 
 .expertise {
-    padding: var(--space-16) 0;
+    padding: var(--space-20) 0;
     background: hsl(var(--background));
 }
 
@@ -975,170 +973,205 @@ a {
     padding: 0 var(--space-6);
 }
 
+/* Header Styling */
 .expertise__header {
-    max-width: 640px;
-    margin-bottom: var(--space-12);
+    max-width: 600px;
+    margin-bottom: var(--space-16);
 }
 
 .expertise__title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 800;
     color: hsl(var(--foreground));
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-6);
     letter-spacing: -0.03em;
     line-height: 1.1;
+}
+
+.expertise__title--highlight {
+    color: hsl(var(--muted-foreground));
+    font-style: italic;
+    font-weight: 600;
+    display: block;
+    margin-top: var(--space-1);
 }
 
 .expertise__subtitle {
     font-size: var(--text-lg);
     color: hsl(var(--muted-foreground));
-    line-height: 1.6;
+    line-height: 1.7;
+    max-width: 480px;
 }
 
-/* --- Bento Grid Layout --- */
-.expertise__grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: minmax(200px, auto);
-    gap: var(--space-6);
-}
-
-/* Card Base Styles */
-.expertise__card {
-    position: relative;
-    padding: var(--space-8);
-    border-radius: var(--radius-lg);
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
+/* List Layout */
+.expertise__list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: var(--space-4);
-    overflow: hidden;
+    gap: var(--space-16); /* Increased gap for breathing room */
 }
 
-.expertise__card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: hsl(var(--foreground));
+.expertise__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
 }
 
-.expertise__card-title {
-    font-size: var(--text-xl);
+.expertise__row--reverse {
+    direction: rtl; /* Swap columns */
+}
+
+.expertise__row--reverse > * {
+    direction: ltr; /* Reset text direction */
+}
+
+.expertise__row-content {
+    max-width: 420px;
+}
+
+/* Label Styling - "01 / STRATEGY" */
+.expertise__row-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: hsl(var(--muted-foreground));
+    -transform: uppercase;
+    margin-bottom: var(--space-4);
+    display: block;
+}
+
+.expertise__row-label--blue {
+    color: hsl(var(--foreground));
+}
+
+/* Title Styling */
+.expertise__row-title {
+    font-size: var(--text-4xl);
     font-weight: 700;
     color: hsl(var(--foreground));
-    margin: 0;
-    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-3) 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
-.expertise__card-desc {
+/* Description */
+.expertise__row-desc {
     font-size: var(--text-base);
     color: hsl(var(--muted-foreground));
-    line-height: 1.6;
-    margin: 0;
-    text-wrap: balance;
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+    max-width: 90%;
 }
 
-/* =========================================================
-   CARD VARIANTS (The Bento Logic - ROW LOCKED)
-   ========================================================= */
-
-/* 1. Strategic Content (Top-Left, Wide) */
-.expertise__card--featured {
-    grid-column: span 8;
-    grid-row: 1; /* 🔒 FIX: Locks to Row 1 */
-    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
-    min-height: 280px; /* Ensures it feels "Featured" */
+/* Explore Link */
+.expertise__row-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: hsl(var(--foreground));
+    text-decoration: none;
+    transition: var(--transition);
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
 }
 
-.expertise__card--featured .expertise__card-title {
-    font-size: var(--text-2xl);
+.expertise__row-link:hover {
+    border-bottom-color: hsl(var(--foreground));
+    transform: translateX(4px);
 }
 
-/* 2. Copywriting (Top-Right, Small) */
-.expertise__card:nth-child(2) {
-    grid-column: span 4;
-    background: hsl(var(--secondary));
-    border-color: transparent;
-}
-
-/* 3. Brand Identity (Bottom-Right, Small) */
-.expertise__card:nth-child(3) {
-    grid-column: 9 / span 4;
-    grid-row: 2;
-    background: hsl(var(--secondary));
-    border-color: transparent;
-}
-
-/* 4. UI/UX Design (Bottom-Left, Wide) */
-.expertise__card--accent {
-    grid-column: span 8;
-    grid-row: 2;
-    background: hsl(var(--accent));
-    border-color: transparent;
-}
-
-.expertise__card--accent .expertise__card-title {
-    color: hsl(var(--accent-foreground));
-}
-
-.expertise__card--accent .expertise__card-desc {
-    color: hsl(var(--muted-foreground));
-}
-
-/* Decorative Element */
-.expertise__card-decor {
-    position: absolute;
-    bottom: var(--space-6);
-    left: var(--space-8);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: hsl(var(--foreground));
-    opacity: 0.08;
-    pointer-events: none;
+/* Visual Box - White Card */
+.expertise__row-visual {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
 
-.expertise__card:hover .expertise__card-decor {
-    opacity: 0.15;
+.expertise__row:hover .expertise__row-visual {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+/* Icon Styling */
+.expertise__row-icon {
+    font-size: 3rem;
+    color: hsl(var(--muted-foreground));
+    opacity: 0.4;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
+
+.expertise__row:hover .expertise__row-icon {
+    opacity: 0.8;
     transform: scale(1.1);
+}
+
+/* SVG Icons (if using actual SVGs) */
+.expertise__row-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke: hsl(var(--muted-foreground));
+    stroke-width: 1.5;
+    fill: none;
 }
 
 /* Responsive Design */
 @media (max-width: 968px) {
-    .expertise__grid {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-6);
+    .expertise__row,
+    .expertise__row--reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
     }
 
-    /* Reset all spans/rows for mobile stacking */
-    .expertise__card,
-    .expertise__card--featured,
-    .expertise__card--accent,
-    .expertise__card:nth-child(2),
-    .expertise__card:nth-child(3) {
-        grid-column: auto;
-        grid-row: auto;
-        min-height: auto;
+    .expertise__row--reverse {
+        direction: ltr;
+    }
+
+    .expertise__row-content {
+        max-width: 100%;
+    }
+
+    .expertise__row-visual {
+        aspect-ratio: 16/9;
+        max-height: 300px;
+    }
+
+    .expertise__title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .expertise {
         padding: var(--space-12) 0;
     }
-    .expertise__card {
-        padding: var(--space-6);
-    }
-    .expertise__title {
+
+    .expertise__row-title {
         font-size: var(--text-2xl);
     }
-    .expertise__subtitle {
-        font-size: var(--text-base);
+
+    .expertise__row-desc {
+        max-width: 100%;
+    }
+
+    .expertise__row-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
     }
 }
 
@@ -1592,8 +1625,9 @@ a {
 /* FOOTER SECTION STYLES */
 .footer {
     padding: var(--space-12) 0 var(--space-8);
-    background: hsl(var(--background));
+    background: hsl(0, 0%, 100%);
     border-top: 1px solid hsl(var(--border));
+    box-shadow: rgba(100, 100, 111, 0.2) 0px -20px 30px 0px;
 }
 
 .footer__container {
@@ -1631,7 +1665,7 @@ a {
 
 /* Navigation Columns */
 .footer__nav {
-    display: contents; /* Allows grid children to participate directly in parent grid */
+    display: contents;
 }
 
 .footer__column {
