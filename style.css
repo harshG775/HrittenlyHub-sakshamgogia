@@ -727,13 +727,21 @@ a {
     animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.logo-cloud__item:nth-child(1) .logo-cloud__logo { animation-delay: 0.1s; }
-.logo-cloud__item:nth-child(2) .logo-cloud__logo { animation-delay: 0.2s; }
-.logo-cloud__item:nth-child(3) .logo-cloud__logo { animation-delay: 0.3s; }
-.logo-cloud__item:nth-child(4) .logo-cloud__logo { animation-delay: 0.4s; }
-.logo-cloud__item:nth-child(5) .logo-cloud__logo { animation-delay: 0.5s; }
-
-
+.logo-cloud__item:nth-child(1) .logo-cloud__logo {
+    animation-delay: 0.1s;
+}
+.logo-cloud__item:nth-child(2) .logo-cloud__logo {
+    animation-delay: 0.2s;
+}
+.logo-cloud__item:nth-child(3) .logo-cloud__logo {
+    animation-delay: 0.3s;
+}
+.logo-cloud__item:nth-child(4) .logo-cloud__logo {
+    animation-delay: 0.4s;
+}
+.logo-cloud__item:nth-child(5) .logo-cloud__logo {
+    animation-delay: 0.5s;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* EXPERTISE SECTION STYLES */
@@ -868,6 +876,85 @@ a {
     }
 
     .expertise__subtitle {
+        font-size: var(--text-base);
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* MANIFESTO SECTION STYLES */
+.manifesto {
+    padding: var(--space-16) 0;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    position: relative;
+    overflow: hidden;
+}
+
+.manifesto__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Background Watermark */
+.manifesto__watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(5rem, 14vw, 10rem);
+    font-weight: 800;
+    color: hsl(var(--primary-foreground));
+    opacity: 0.04;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    letter-spacing: 0.05em;
+}
+
+/* Typography */
+.manifesto__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+    color: hsl(var(--primary-foreground));
+}
+
+.manifesto__emphasis {
+    font-style: italic;
+    font-weight: 500;
+    color: hsl(var(--muted)); /* Subtle contrast for the italic phrase */
+}
+
+.manifesto__description {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: hsl(var(--muted-foreground));
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .manifesto {
+        padding: var(--space-12) 0;
+    }
+
+    .manifesto__watermark {
+        font-size: clamp(3rem, 18vw, 6rem);
+        opacity: 0.03;
+    }
+
+    .manifesto__title {
+        font-size: var(--text-2xl);
+    }
+
+    .manifesto__description {
         font-size: var(--text-base);
     }
 }
