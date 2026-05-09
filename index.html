@@ -3,8 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="WrittenlyHub: Premium content engineering and strategic copywriting for modern brands. Convert readers into customers with data-backed editorial strategy and high-converting content." />
-        <meta name="keywords" content="content marketing, copywriting, content strategy, brand positioning, SaaS content, growth marketing" />
+        <meta
+            name="description"
+            content="WrittenlyHub: Premium content engineering and strategic copywriting for modern brands. Convert readers into customers with data-backed editorial strategy and high-converting content."
+        />
+        <meta
+            name="keywords"
+            content="content marketing, copywriting, content strategy, brand positioning, SaaS content, growth marketing"
+        />
         <meta name="author" content="WrittenlyHub" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#1a1a1a" />
@@ -13,20 +19,35 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://writtelyhub.com/" />
         <meta property="og:title" content="WrittenlyHub | Content That Converts Into Growth" />
-        <meta property="og:description" content="Premium content engineering and strategic copywriting for modern brands. Convert readers into customers with data-backed editorial strategy." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop" />
+        <meta
+            property="og:description"
+            content="Premium content engineering and strategic copywriting for modern brands. Convert readers into customers with data-backed editorial strategy."
+        />
+        <meta
+            property="og:image"
+            content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop"
+        />
         <meta property="og:site_name" content="WrittenlyHub" />
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="WrittenlyHub | Content That Converts Into Growth" />
-        <meta name="twitter:description" content="Premium content engineering for modern brands. Strategic copywriting that drives growth." />
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop" />
+        <meta
+            name="twitter:description"
+            content="Premium content engineering for modern brands. Strategic copywriting that drives growth."
+        />
+        <meta
+            name="twitter:image"
+            content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop"
+        />
 
         <link rel="canonical" href="https://writtelyhub.com/" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+            rel="stylesheet"
+        />
 
         <script type="application/ld+json">
             {
@@ -96,7 +117,11 @@
                 --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
-            * { margin: 0; padding: 0; box-sizing: border-box; }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
             html {
                 scroll-behavior: smooth;
@@ -128,11 +153,16 @@
                 z-index: 9999;
                 transform: translate(-50%, -50%);
                 opacity: 0;
-                transition: opacity 0.3s ease, transform 0.08s ease, background 0.3s ease;
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.08s ease,
+                    background 0.3s ease;
                 will-change: transform;
             }
 
-            #cursor-dot.visible { opacity: 0.7; }
+            #cursor-dot.visible {
+                opacity: 0.7;
+            }
             #cursor-dot.hovering {
                 transform: translate(-50%, -50%) scale(2.5);
                 background: var(--accent-tertiary);
@@ -140,8 +170,12 @@
             }
 
             @media (max-width: 768px) {
-                body { cursor: auto; }
-                #cursor-dot { display: none; }
+                body {
+                    cursor: auto;
+                }
+                #cursor-dot {
+                    display: none;
+                }
             }
 
             /* ============================================================
@@ -152,8 +186,9 @@
             .reveal {
                 opacity: 0;
                 transform: translateY(22px);
-                transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                            transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+                transition:
+                    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
             }
 
             .reveal.revealed {
@@ -162,38 +197,74 @@
             }
 
             /* Stagger delay helpers (applied via JS) */
-            .reveal-delay-1 { transition-delay: 0.1s; }
-            .reveal-delay-2 { transition-delay: 0.2s; }
-            .reveal-delay-3 { transition-delay: 0.3s; }
-            .reveal-delay-4 { transition-delay: 0.4s; }
-            .reveal-delay-5 { transition-delay: 0.5s; }
+            .reveal-delay-1 {
+                transition-delay: 0.1s;
+            }
+            .reveal-delay-2 {
+                transition-delay: 0.2s;
+            }
+            .reveal-delay-3 {
+                transition-delay: 0.3s;
+            }
+            .reveal-delay-4 {
+                transition-delay: 0.4s;
+            }
+            .reveal-delay-5 {
+                transition-delay: 0.5s;
+            }
 
             /* ============================================================
                TYPOGRAPHY
                ============================================================ */
-            h1, h2, h3, h4, h5, h6 {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
                 font-family: var(--font-display);
                 font-weight: 800;
                 line-height: 1.1;
                 letter-spacing: -0.02em;
             }
 
-            h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
-            h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
-            h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+            h1 {
+                font-size: clamp(2.5rem, 6vw, 4.5rem);
+            }
+            h2 {
+                font-size: clamp(2rem, 5vw, 3.5rem);
+            }
+            h3 {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
 
-            p { color: var(--text-secondary); max-width: 65ch; }
-            a { color: inherit; text-decoration: none; transition: var(--transition); }
+            p {
+                color: var(--text-secondary);
+                max-width: 65ch;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+                transition: var(--transition);
+            }
 
             /* ============================================================
                UTILITIES
                ============================================================ */
-            .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 var(--spacing-md);
+            }
 
-            .section-padding { padding: var(--spacing-3xl) 0; }
+            .section-padding {
+                padding: var(--spacing-3xl) 0;
+            }
 
             @media (max-width: 768px) {
-                .section-padding { padding: var(--spacing-2xl) 0; }
+                .section-padding {
+                    padding: var(--spacing-2xl) 0;
+                }
             }
 
             /* ============================================================
@@ -215,8 +286,14 @@
             }
 
             @keyframes headerSlideDown {
-                from { transform: translateY(-100%); opacity: 0; }
-                to   { transform: translateY(0);     opacity: 1; }
+                from {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
             }
 
             .header.scrolled {
@@ -242,8 +319,14 @@
             }
 
             @keyframes fadeInLeft {
-                from { opacity: 0; transform: translateX(-12px); }
-                to   { opacity: 1; transform: translateX(0); }
+                from {
+                    opacity: 0;
+                    transform: translateX(-12px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
             }
 
             .nav-menu {
@@ -257,14 +340,28 @@
                 animation: fadeInDown 0.5s both;
             }
 
-            .nav-item:nth-child(1) { animation-delay: 0.4s; }
-            .nav-item:nth-child(2) { animation-delay: 0.5s; }
-            .nav-item:nth-child(3) { animation-delay: 0.6s; }
-            .nav-item:nth-child(4) { animation-delay: 0.7s; }
+            .nav-item:nth-child(1) {
+                animation-delay: 0.4s;
+            }
+            .nav-item:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+            .nav-item:nth-child(3) {
+                animation-delay: 0.6s;
+            }
+            .nav-item:nth-child(4) {
+                animation-delay: 0.7s;
+            }
 
             @keyframes fadeInDown {
-                from { opacity: 0; transform: translateY(-8px); }
-                to   { opacity: 1; transform: translateY(0); }
+                from {
+                    opacity: 0;
+                    transform: translateY(-8px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
 
             .nav-link {
@@ -288,7 +385,9 @@
                 transition: width 0.3s ease;
             }
 
-            .nav-link:hover::after { width: 100%; }
+            .nav-link:hover::after {
+                width: 100%;
+            }
 
             .nav-cta {
                 display: inline-flex;
@@ -330,12 +429,20 @@
                 transition: var(--transition);
             }
 
-            .nav-toggle.active span:nth-child(1) { transform: translateY(0.55rem) rotate(45deg); }
-            .nav-toggle.active span:nth-child(2) { opacity: 0; }
-            .nav-toggle.active span:nth-child(3) { transform: translateY(-0.55rem) rotate(-45deg); }
+            .nav-toggle.active span:nth-child(1) {
+                transform: translateY(0.55rem) rotate(45deg);
+            }
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .nav-toggle.active span:nth-child(3) {
+                transform: translateY(-0.55rem) rotate(-45deg);
+            }
 
             @media (max-width: 768px) {
-                .nav-toggle { display: flex; }
+                .nav-toggle {
+                    display: flex;
+                }
 
                 .nav-menu {
                     position: fixed;
@@ -353,7 +460,9 @@
                     z-index: 999;
                 }
 
-                .nav-menu.active { transform: translateX(0); }
+                .nav-menu.active {
+                    transform: translateX(0);
+                }
 
                 .nav-item {
                     opacity: 0;
@@ -367,13 +476,27 @@
                     transform: translateY(0);
                 }
 
-                .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
-                .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.15s; }
-                .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.2s; }
-                .nav-menu.active .nav-item:nth-child(4) { transition-delay: 0.25s; }
+                .nav-menu.active .nav-item:nth-child(1) {
+                    transition-delay: 0.1s;
+                }
+                .nav-menu.active .nav-item:nth-child(2) {
+                    transition-delay: 0.15s;
+                }
+                .nav-menu.active .nav-item:nth-child(3) {
+                    transition-delay: 0.2s;
+                }
+                .nav-menu.active .nav-item:nth-child(4) {
+                    transition-delay: 0.25s;
+                }
 
-                .nav-link { font-size: 1.5rem; }
-                .nav-cta { width: 100%; max-width: 280px; justify-content: center; }
+                .nav-link {
+                    font-size: 1.5rem;
+                }
+                .nav-cta {
+                    width: 100%;
+                    max-width: 280px;
+                    justify-content: center;
+                }
             }
 
             /* ============================================================
@@ -401,8 +524,15 @@
             }
 
             @keyframes pulseGlow {
-                0%, 100% { opacity: 1; transform: scale(1); }
-                50%       { opacity: 0.6; transform: scale(1.1); }
+                0%,
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                50% {
+                    opacity: 0.6;
+                    transform: scale(1.1);
+                }
             }
 
             .hero-grid {
@@ -415,15 +545,30 @@
             }
 
             /* Hero content — word-by-word entrance */
-            .hero-content { animation: fadeInUp 0.8s 0.2s both; }
-
-            @keyframes fadeInUp {
-                from { opacity: 0; transform: translateY(28px); }
-                to   { opacity: 1; transform: translateY(0); }
+            .hero-content {
+                animation: fadeInUp 0.8s 0.2s both;
             }
 
-            .hero-content h1 { margin-bottom: var(--spacing-md); color: var(--text-primary); }
-            .hero-content em { font-style: italic; font-weight: 500; color: var(--text-secondary); }
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(28px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .hero-content h1 {
+                margin-bottom: var(--spacing-md);
+                color: var(--text-primary);
+            }
+            .hero-content em {
+                font-style: italic;
+                font-weight: 500;
+                color: var(--text-secondary);
+            }
 
             .hero-description {
                 font-size: 1.125rem;
@@ -459,7 +604,9 @@
                 box-shadow: 0 0 0 3px rgba(45, 45, 45, 0.1);
             }
 
-            .form-input::placeholder { color: var(--text-muted); }
+            .form-input::placeholder {
+                color: var(--text-muted);
+            }
 
             .form-button {
                 padding: var(--spacing-sm) var(--spacing-md);
@@ -483,7 +630,9 @@
                 color: white;
             }
 
-            .form-button:active { transform: translateY(0); }
+            .form-button:active {
+                transform: translateY(0);
+            }
 
             .form-message {
                 margin-top: var(--spacing-sm);
@@ -494,12 +643,26 @@
                 animation: slideIn 0.3s ease;
             }
 
-            .form-message.success { background: rgba(34, 197, 94, 0.1); color: #15803d; display: block; }
-            .form-message.error   { background: rgba(239, 68, 68, 0.1);  color: #991b1b; display: block; }
+            .form-message.success {
+                background: rgba(34, 197, 94, 0.1);
+                color: #15803d;
+                display: block;
+            }
+            .form-message.error {
+                background: rgba(239, 68, 68, 0.1);
+                color: #991b1b;
+                display: block;
+            }
 
             @keyframes slideIn {
-                from { opacity: 0; transform: translateY(-10px); }
-                to   { opacity: 1; transform: translateY(0); }
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
 
             .trust-section {
@@ -510,7 +673,10 @@
                 animation: fadeInUp 0.8s 0.7s both;
             }
 
-            .trust-avatars { display: flex; position: relative; }
+            .trust-avatars {
+                display: flex;
+                position: relative;
+            }
 
             .trust-avatar {
                 width: 40px;
@@ -522,8 +688,13 @@
                 transition: var(--transition);
             }
 
-            .trust-avatar:first-child { margin-left: 0; }
-            .trust-avatar:hover { transform: translateY(-4px) scale(1.05); z-index: 10; }
+            .trust-avatar:first-child {
+                margin-left: 0;
+            }
+            .trust-avatar:hover {
+                transform: translateY(-4px) scale(1.05);
+                z-index: 10;
+            }
 
             .trust-text {
                 font-size: 0.75rem;
@@ -543,8 +714,14 @@
             }
 
             @keyframes fadeInRight {
-                from { opacity: 0; transform: translateX(28px); }
-                to   { opacity: 1; transform: translateX(0); }
+                from {
+                    opacity: 0;
+                    transform: translateX(28px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
             }
 
             .hero-image {
@@ -573,34 +750,77 @@
                 box-shadow: var(--shadow-md);
                 animation: float 3s ease-in-out infinite;
                 /* entrance */
-                animation: badgeEntrance 0.6s 1.1s both, float 3s 1.7s ease-in-out infinite;
+                animation:
+                    badgeEntrance 0.6s 1.1s both,
+                    float 3s 1.7s ease-in-out infinite;
             }
 
             @keyframes badgeEntrance {
-                from { opacity: 0; transform: translateY(12px) scale(0.9); }
-                to   { opacity: 1; transform: translateY(0)  scale(1); }
+                from {
+                    opacity: 0;
+                    transform: translateY(12px) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
             }
 
             @keyframes float {
-                0%, 100% { transform: translateY(0); }
-                50%       { transform: translateY(-8px); }
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-8px);
+                }
             }
 
             @media (max-width: 968px) {
-                .hero-grid { grid-template-columns: 1fr; gap: var(--spacing-xl); }
-                .hero-visual { order: -1; }
-                .hero-content h1 { text-align: center; }
-                .hero-description { margin-left: auto; margin-right: auto; }
-                .form-group { margin-left: auto; margin-right: auto; }
-                .trust-section { justify-content: center; }
+                .hero-grid {
+                    grid-template-columns: 1fr;
+                    gap: var(--spacing-xl);
+                }
+                .hero-visual {
+                    order: -1;
+                }
+                .hero-content h1 {
+                    text-align: center;
+                }
+                .hero-description {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .form-group {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .trust-section {
+                    justify-content: center;
+                }
             }
 
             @media (max-width: 640px) {
-                .hero { padding: var(--spacing-2xl) 0 var(--spacing-xl); }
-                .form-group { flex-direction: column; width: 100%; }
-                .form-button { width: 100%; }
-                .stat-badge { font-size: 1rem; padding: var(--spacing-xs) var(--spacing-sm); bottom: var(--spacing-md); left: var(--spacing-md); }
-                .trust-section { flex-direction: column; gap: var(--spacing-sm); }
+                .hero {
+                    padding: var(--spacing-2xl) 0 var(--spacing-xl);
+                }
+                .form-group {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                .form-button {
+                    width: 100%;
+                }
+                .stat-badge {
+                    font-size: 1rem;
+                    padding: var(--spacing-xs) var(--spacing-sm);
+                    bottom: var(--spacing-md);
+                    left: var(--spacing-md);
+                }
+                .trust-section {
+                    flex-direction: column;
+                    gap: var(--spacing-sm);
+                }
             }
 
             /* ============================================================
@@ -648,11 +868,17 @@
                 animation: marqueeScroll 22s linear infinite;
             }
 
-            .logo-track:hover { animation-play-state: paused; }
+            .logo-track:hover {
+                animation-play-state: paused;
+            }
 
             @keyframes marqueeScroll {
-                from { transform: translateX(0); }
-                to   { transform: translateX(-50%); }
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-50%);
+                }
             }
 
             .logo-item {
@@ -665,15 +891,24 @@
                 flex-shrink: 0;
             }
 
-            .logo-item:hover { opacity: 0.9; }
+            .logo-item:hover {
+                opacity: 0.9;
+            }
 
             /* ============================================================
                EXPERTISE SECTION
                ============================================================ */
-            .expertise { background: var(--bg-primary); }
+            .expertise {
+                background: var(--bg-primary);
+            }
 
-            .expertise-header { max-width: 650px; margin-bottom: var(--spacing-2xl); }
-            .expertise-title { margin-bottom: var(--spacing-md); }
+            .expertise-header {
+                max-width: 650px;
+                margin-bottom: var(--spacing-2xl);
+            }
+            .expertise-title {
+                margin-bottom: var(--spacing-md);
+            }
             .expertise-title em {
                 font-style: italic;
                 font-weight: 500;
@@ -682,9 +917,17 @@
                 margin-top: var(--spacing-xs);
             }
 
-            .expertise-subtitle { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.7; }
+            .expertise-subtitle {
+                font-size: 1.125rem;
+                color: var(--text-secondary);
+                line-height: 1.7;
+            }
 
-            .expertise-grid { display: flex; flex-direction: column; gap: var(--spacing-2xl); }
+            .expertise-grid {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-2xl);
+            }
 
             .service-row {
                 display: grid;
@@ -693,10 +936,16 @@
                 align-items: center;
             }
 
-            .service-row.reverse { direction: rtl; }
-            .service-row.reverse > * { direction: ltr; }
+            .service-row.reverse {
+                direction: rtl;
+            }
+            .service-row.reverse > * {
+                direction: ltr;
+            }
 
-            .service-content { max-width: 450px; }
+            .service-content {
+                max-width: 450px;
+            }
 
             .service-label {
                 font-size: 0.75rem;
@@ -708,9 +957,17 @@
                 display: block;
             }
 
-            .service-title { font-size: 2rem; margin-bottom: var(--spacing-sm); }
+            .service-title {
+                font-size: 2rem;
+                margin-bottom: var(--spacing-sm);
+            }
 
-            .service-description { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--spacing-lg); }
+            .service-description {
+                font-size: 1rem;
+                color: var(--text-secondary);
+                line-height: 1.8;
+                margin-bottom: var(--spacing-lg);
+            }
 
             .service-link {
                 display: inline-flex;
@@ -726,7 +983,10 @@
                 padding-bottom: 2px;
             }
 
-            .service-link:hover { border-bottom-color: var(--text-primary); transform: translateX(4px); }
+            .service-link:hover {
+                border-bottom-color: var(--text-primary);
+                transform: translateX(4px);
+            }
 
             .service-visual {
                 background: var(--bg-secondary);
@@ -737,7 +997,9 @@
                 align-items: center;
                 justify-content: center;
                 box-shadow: var(--shadow-sm);
-                transition: box-shadow 0.4s ease, transform 0.4s ease;
+                transition:
+                    box-shadow 0.4s ease,
+                    transform 0.4s ease;
                 overflow: hidden;
                 position: relative;
             }
@@ -766,7 +1028,11 @@
                 transition: var(--transition);
             }
 
-            .service-icon-large svg { width: 100%; height: 100%; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08)); }
+            .service-icon-large svg {
+                width: 100%;
+                height: 100%;
+                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
+            }
 
             .service-row:hover .service-icon-large {
                 color: var(--accent-secondary);
@@ -835,18 +1101,41 @@
                 transition: var(--transition);
             }
 
-            .service-row:hover .deco-circle  { opacity: 0.25; transform: scale(1.1); border-color: var(--accent-secondary); }
-            .service-row:hover .deco-circle-small { opacity: 0.3; transform: scale(1.15); }
-            .service-row:hover .deco-line    { opacity: 0.5; width: 85px; }
-            .service-row:hover .deco-dot     { opacity: 0.8; transform: scale(1.3); box-shadow: 0 0 15px rgba(217, 119, 6, 0.6); }
-
-            @keyframes floatDecorative {
-                0%, 100% { transform: translateY(0); }
-                50%       { transform: translateY(-5px); }
+            .service-row:hover .deco-circle {
+                opacity: 0.25;
+                transform: scale(1.1);
+                border-color: var(--accent-secondary);
+            }
+            .service-row:hover .deco-circle-small {
+                opacity: 0.3;
+                transform: scale(1.15);
+            }
+            .service-row:hover .deco-line {
+                opacity: 0.5;
+                width: 85px;
+            }
+            .service-row:hover .deco-dot {
+                opacity: 0.8;
+                transform: scale(1.3);
+                box-shadow: 0 0 15px rgba(217, 119, 6, 0.6);
             }
 
-            .service-visual.combo:hover .deco-circle       { animation: floatDecorative 3s ease-in-out infinite; }
-            .service-visual.combo:hover .deco-circle-small  { animation: floatDecorative 3s ease-in-out 0.5s infinite; }
+            @keyframes floatDecorative {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-5px);
+                }
+            }
+
+            .service-visual.combo:hover .deco-circle {
+                animation: floatDecorative 3s ease-in-out infinite;
+            }
+            .service-visual.combo:hover .deco-circle-small {
+                animation: floatDecorative 3s ease-in-out 0.5s infinite;
+            }
 
             @media (max-width: 968px) {
                 .service-row,
@@ -856,16 +1145,34 @@
                     direction: ltr;
                 }
 
-                .service-row.reverse > * { direction: ltr; }
-                .service-icon-large { width: 140px; height: 140px; }
+                .service-row.reverse > * {
+                    direction: ltr;
+                }
+                .service-icon-large {
+                    width: 140px;
+                    height: 140px;
+                }
             }
 
             @media (max-width: 640px) {
-                .service-title { font-size: 1.5rem; }
-                .service-icon-large { width: 120px; height: 120px; }
-                .deco-circle { width: 70px; height: 70px; }
-                .deco-circle-small { width: 40px; height: 40px; }
-                .deco-line { width: 50px; }
+                .service-title {
+                    font-size: 1.5rem;
+                }
+                .service-icon-large {
+                    width: 120px;
+                    height: 120px;
+                }
+                .deco-circle {
+                    width: 70px;
+                    height: 70px;
+                }
+                .deco-circle-small {
+                    width: 40px;
+                    height: 40px;
+                }
+                .deco-line {
+                    width: 50px;
+                }
             }
 
             /* ============================================================
@@ -896,8 +1203,12 @@
             }
 
             @keyframes driftX {
-                from { transform: translate(-52%, -50%); }
-                to   { transform: translate(-48%, -50%); }
+                from {
+                    transform: translate(-52%, -50%);
+                }
+                to {
+                    transform: translate(-48%, -50%);
+                }
             }
 
             .manifesto-content {
@@ -914,9 +1225,17 @@
                 color: white;
             }
 
-            .manifesto-title em { font-style: italic; font-weight: 500; color: rgba(255, 255, 255, 0.8); }
+            .manifesto-title em {
+                font-style: italic;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.8);
+            }
 
-            .manifesto-description { font-size: 1.125rem; line-height: 1.8; color: rgba(255, 255, 255, 0.85); }
+            .manifesto-description {
+                font-size: 1.125rem;
+                line-height: 1.8;
+                color: rgba(255, 255, 255, 0.85);
+            }
 
             /* Manifesto underline accent animation */
             .manifesto-title .accent-underline {
@@ -931,19 +1250,31 @@
                 bottom: -4px;
                 width: 0;
                 height: 2px;
-                background: rgba(255,255,255,0.5);
+                background: rgba(255, 255, 255, 0.5);
                 transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
             }
 
-            .manifesto-content.revealed .accent-underline::after { width: 100%; }
+            .manifesto-content.revealed .accent-underline::after {
+                width: 100%;
+            }
 
             /* ============================================================
                PROCESS SECTION
                ============================================================ */
-            .process { background: var(--bg-primary); padding: var(--spacing-3xl) 0; }
-            .process-title { text-align: center; margin-bottom: var(--spacing-3xl); }
+            .process {
+                background: var(--bg-primary);
+                padding: var(--spacing-3xl) 0;
+            }
+            .process-title {
+                text-align: center;
+                margin-bottom: var(--spacing-3xl);
+            }
 
-            .process-steps { display: flex; flex-direction: column; gap: var(--spacing-2xl); }
+            .process-steps {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-2xl);
+            }
 
             .step {
                 display: grid;
@@ -952,7 +1283,9 @@
                 align-items: center;
             }
 
-            .step.reverse .step-visual { order: -1; }
+            .step.reverse .step-visual {
+                order: -1;
+            }
 
             .step-number {
                 font-size: 8rem;
@@ -965,9 +1298,16 @@
                 transition: opacity 0.8s ease;
             }
 
-            .step-title { font-size: 2rem; margin-bottom: var(--spacing-sm); }
+            .step-title {
+                font-size: 2rem;
+                margin-bottom: var(--spacing-sm);
+            }
 
-            .step-description { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; }
+            .step-description {
+                font-size: 1rem;
+                color: var(--text-secondary);
+                line-height: 1.8;
+            }
 
             .step-visual {
                 border-radius: var(--radius-lg);
@@ -975,7 +1315,9 @@
                 box-shadow: var(--shadow-lg);
                 aspect-ratio: 4/3;
                 background: var(--bg-secondary);
-                transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+                transition:
+                    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                    box-shadow 0.5s ease;
             }
 
             .step-visual:hover {
@@ -983,22 +1325,39 @@
                 box-shadow: var(--shadow-xl);
             }
 
-            .step-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+            .step-visual img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
             @media (max-width: 968px) {
-                .step { grid-template-columns: 1fr; gap: var(--spacing-xl); }
-                .step.reverse .step-visual { order: 0; }
+                .step {
+                    grid-template-columns: 1fr;
+                    gap: var(--spacing-xl);
+                }
+                .step.reverse .step-visual {
+                    order: 0;
+                }
             }
 
             @media (max-width: 640px) {
-                .step-number { font-size: 5rem; }
-                .step-title { font-size: 1.5rem; }
+                .step-number {
+                    font-size: 5rem;
+                }
+                .step-title {
+                    font-size: 1.5rem;
+                }
             }
 
             /* ============================================================
                CTA SECTION
                ============================================================ */
-            .cta { background: var(--bg-primary); padding: var(--spacing-3xl) 0; }
+            .cta {
+                background: var(--bg-primary);
+                padding: var(--spacing-3xl) 0;
+            }
 
             .cta-card {
                 background: linear-gradient(135deg, var(--dark-section) 0%, var(--dark-section) 100%);
@@ -1011,7 +1370,9 @@
                 box-shadow: var(--shadow-xl);
                 position: relative;
                 overflow: hidden;
-                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                transition:
+                    transform 0.4s ease,
+                    box-shadow 0.4s ease;
             }
 
             .cta-card:hover {
@@ -1022,7 +1383,10 @@
             .cta-card::before {
                 content: "";
                 position: absolute;
-                top: 0; left: 0; right: 0; bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
                 background: radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
                 pointer-events: none;
             }
@@ -1031,22 +1395,37 @@
             .cta-card::after {
                 content: "";
                 position: absolute;
-                top: 0; left: -100%; right: auto; bottom: 0;
+                top: 0;
+                left: -100%;
+                right: auto;
+                bottom: 0;
                 width: 60%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
                 transform: skewX(-15deg);
                 animation: shimmer 6s ease-in-out infinite;
                 pointer-events: none;
             }
 
             @keyframes shimmer {
-                0%   { left: -100%; }
-                60%, 100% { left: 150%; }
+                0% {
+                    left: -100%;
+                }
+                60%,
+                100% {
+                    left: 150%;
+                }
             }
 
-            .cta-content { position: relative; z-index: 1; }
+            .cta-content {
+                position: relative;
+                z-index: 1;
+            }
 
-            .cta-title { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: var(--spacing-md); font-weight: 800; }
+            .cta-title {
+                font-size: clamp(2rem, 5vw, 3.5rem);
+                margin-bottom: var(--spacing-md);
+                font-weight: 800;
+            }
 
             .cta-description {
                 font-size: 1.125rem;
@@ -1078,7 +1457,9 @@
                 min-width: 0;
             }
 
-            .cta-input::placeholder { color: rgba(255, 255, 255, 0.6); }
+            .cta-input::placeholder {
+                color: rgba(255, 255, 255, 0.6);
+            }
 
             .cta-input:focus {
                 outline: none;
@@ -1102,13 +1483,27 @@
                 box-shadow: var(--shadow-md);
             }
 
-            .cta-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); background: #f0f0f0; color: #1f1f1f; }
-            .cta-button:active { transform: translateY(0); }
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+                background: #f0f0f0;
+                color: #1f1f1f;
+            }
+            .cta-button:active {
+                transform: translateY(0);
+            }
 
             @media (max-width: 640px) {
-                .cta-card { padding: var(--spacing-2xl) var(--spacing-lg); }
-                .cta-form { flex-direction: column; width: 100%; }
-                .cta-button { width: 100%; }
+                .cta-card {
+                    padding: var(--spacing-2xl) var(--spacing-lg);
+                }
+                .cta-form {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                .cta-button {
+                    width: 100%;
+                }
             }
 
             /* ============================================================
@@ -1128,9 +1523,18 @@
                 margin-bottom: var(--spacing-2xl);
             }
 
-            .footer-brand h3 { font-size: 1.25rem; margin-bottom: var(--spacing-sm); color: var(--text-primary); }
+            .footer-brand h3 {
+                font-size: 1.25rem;
+                margin-bottom: var(--spacing-sm);
+                color: var(--text-primary);
+            }
 
-            .footer-tagline { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; max-width: 320px; }
+            .footer-tagline {
+                font-size: 0.875rem;
+                color: var(--text-secondary);
+                line-height: 1.6;
+                max-width: 320px;
+            }
 
             .footer-column h4 {
                 font-size: 0.75rem;
@@ -1142,10 +1546,22 @@
                 font-family: var(--font-body);
             }
 
-            .footer-links { display: flex; flex-direction: column; gap: var(--spacing-sm); list-style: none; }
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-sm);
+                list-style: none;
+            }
 
-            .footer-links a { font-size: 0.875rem; color: var(--text-primary); transition: var(--transition); }
-            .footer-links a:hover { color: var(--accent-secondary); transform: translateX(4px); }
+            .footer-links a {
+                font-size: 0.875rem;
+                color: var(--text-primary);
+                transition: var(--transition);
+            }
+            .footer-links a:hover {
+                color: var(--accent-secondary);
+                transform: translateX(4px);
+            }
 
             .footer-bottom {
                 padding-top: var(--spacing-lg);
@@ -1160,21 +1576,32 @@
             }
 
             @media (max-width: 768px) {
-                .footer-grid { grid-template-columns: 1fr; gap: var(--spacing-xl); }
-                .footer-bottom { flex-direction: column; text-align: center; }
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                    gap: var(--spacing-xl);
+                }
+                .footer-bottom {
+                    flex-direction: column;
+                    text-align: center;
+                }
             }
 
             /* ============================================================
                ACCESSIBILITY
                ============================================================ */
             @media (prefers-reduced-motion: reduce) {
-                *, *::before, *::after {
+                *,
+                *::before,
+                *::after {
                     animation-duration: 0.01ms !important;
                     animation-iteration-count: 1 !important;
                     transition-duration: 0.01ms !important;
                 }
 
-                .reveal { opacity: 1; transform: none; }
+                .reveal {
+                    opacity: 1;
+                    transform: none;
+                }
             }
 
             *:focus-visible {
@@ -1256,9 +1683,21 @@
 
                             <div class="trust-section">
                                 <div class="trust-avatars">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Client avatar 1" class="trust-avatar" />
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Client avatar 2" class="trust-avatar" />
-                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Client avatar 3" class="trust-avatar" />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
+                                        alt="Client avatar 1"
+                                        class="trust-avatar"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                                        alt="Client avatar 2"
+                                        class="trust-avatar"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+                                        alt="Client avatar 3"
+                                        class="trust-avatar"
+                                    />
                                 </div>
                                 <p class="trust-text">Trusted by 100+ Modern Teams</p>
                             </div>
@@ -1330,32 +1769,155 @@
                             <div class="service-visual combo">
                                 <div class="service-icon-large">
                                     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1.5" opacity="0.2" />
-                                        <circle cx="60" cy="60" r="35" stroke="currentColor" stroke-width="1.5" opacity="0.4" />
-                                        <circle cx="60" cy="60" r="20" stroke="currentColor" stroke-width="1.5" opacity="0.6" />
+                                        <circle
+                                            cx="60"
+                                            cy="60"
+                                            r="50"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.2"
+                                        />
+                                        <circle
+                                            cx="60"
+                                            cy="60"
+                                            r="35"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                        />
+                                        <circle
+                                            cx="60"
+                                            cy="60"
+                                            r="20"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.6"
+                                        />
                                         <circle cx="60" cy="60" r="6" fill="currentColor" opacity="0.8" />
-                                        <rect x="28" y="72" width="7" height="18" rx="2" fill="currentColor" opacity="0.6">
-                                            <animate attributeName="height" values="18;14;18" dur="3s" repeatCount="indefinite" />
-                                            <animate attributeName="y" values="72;76;72" dur="3s" repeatCount="indefinite" />
+                                        <rect
+                                            x="28"
+                                            y="72"
+                                            width="7"
+                                            height="18"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.6"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="18;14;18"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="72;76;72"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="40" y="65" width="7" height="25" rx="2" fill="currentColor" opacity="0.7">
-                                            <animate attributeName="height" values="25;20;25" dur="2.5s" repeatCount="indefinite" />
-                                            <animate attributeName="y" values="65;70;65" dur="2.5s" repeatCount="indefinite" />
+                                        <rect
+                                            x="40"
+                                            y="65"
+                                            width="7"
+                                            height="25"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.7"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="25;20;25"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="65;70;65"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="52" y="58" width="7" height="32" rx="2" fill="currentColor" opacity="0.8">
-                                            <animate attributeName="height" values="32;27;32" dur="2s" repeatCount="indefinite" />
-                                            <animate attributeName="y" values="58;63;58" dur="2s" repeatCount="indefinite" />
+                                        <rect
+                                            x="52"
+                                            y="58"
+                                            width="7"
+                                            height="32"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.8"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="32;27;32"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="58;63;58"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="64" y="68" width="7" height="22" rx="2" fill="currentColor" opacity="0.7">
-                                            <animate attributeName="height" values="22;17;22" dur="3.5s" repeatCount="indefinite" />
-                                            <animate attributeName="y" values="68;73;68" dur="3.5s" repeatCount="indefinite" />
+                                        <rect
+                                            x="64"
+                                            y="68"
+                                            width="7"
+                                            height="22"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.7"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="22;17;22"
+                                                dur="3.5s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="68;73;68"
+                                                dur="3.5s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="76" y="62" width="7" height="28" rx="2" fill="currentColor" opacity="0.6">
-                                            <animate attributeName="height" values="28;23;28" dur="3s" repeatCount="indefinite" />
-                                            <animate attributeName="y" values="62;67;62" dur="3s" repeatCount="indefinite" />
+                                        <rect
+                                            x="76"
+                                            y="62"
+                                            width="7"
+                                            height="28"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.6"
+                                        >
+                                            <animate
+                                                attributeName="height"
+                                                values="28;23;28"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="y"
+                                                values="62;67;62"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <path d="M 82 42 L 92 32 M 92 32 L 82 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8" />
-                                        <path d="M 92 32 L 72 52" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+                                        <path
+                                            d="M 82 42 L 92 32 M 92 32 L 82 22"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            opacity="0.8"
+                                        />
+                                        <path
+                                            d="M 92 32 L 72 52"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            opacity="0.8"
+                                        />
                                     </svg>
                                 </div>
                                 <div class="decorative-elements">
@@ -1381,27 +1943,104 @@
                             <div class="service-visual combo">
                                 <div class="service-icon-large">
                                     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="32" y="22" width="46" height="65" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.3" />
-                                        <line x1="42" y1="36" x2="68" y2="36" stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-linecap="round" />
-                                        <line x1="42" y1="46" x2="66" y2="46" stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-linecap="round" />
-                                        <line x1="42" y1="56" x2="70" y2="56" stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-linecap="round" />
-                                        <line x1="42" y1="66" x2="62" y2="66" stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-linecap="round" />
+                                        <rect
+                                            x="32"
+                                            y="22"
+                                            width="46"
+                                            height="65"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.3"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="36"
+                                            x2="68"
+                                            y2="36"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="46"
+                                            x2="66"
+                                            y2="46"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="56"
+                                            x2="70"
+                                            y2="56"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
+                                        <line
+                                            x1="42"
+                                            y1="66"
+                                            x2="62"
+                                            y2="66"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                            stroke-linecap="round"
+                                        />
                                         <g transform="translate(62, 62) rotate(-45)">
                                             <path d="M 0 0 L 7 -7 L 16 2 L 9 9 Z" fill="currentColor" opacity="0.9" />
-                                            <path d="M 7 -7 L 11 -11 M 9 2 L 13 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+                                            <path
+                                                d="M 7 -7 L 11 -11 M 9 2 L 13 -2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                opacity="0.6"
+                                            />
                                             <path d="M 9 9 L 11 16 L 7 16 Z" fill="currentColor" opacity="0.7" />
-                                            <path d="M 11 16 Q 14 22 9 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
-                                                <animate attributeName="d" values="M 11 16 Q 14 22 9 26; M 11 16 Q 12 20 10 24; M 11 16 Q 14 22 9 26" dur="2s" repeatCount="indefinite" />
+                                            <path
+                                                d="M 11 16 Q 14 22 9 26"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                opacity="0.8"
+                                            >
+                                                <animate
+                                                    attributeName="d"
+                                                    values="M 11 16 Q 14 22 9 26; M 11 16 Q 12 20 10 24; M 11 16 Q 14 22 9 26"
+                                                    dur="2s"
+                                                    repeatCount="indefinite"
+                                                />
                                             </path>
                                         </g>
                                         <circle cx="42" cy="28" r="2" fill="currentColor" opacity="0.6">
-                                            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite" />
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.6;0.2;0.6"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
                                         </circle>
                                         <circle cx="68" cy="32" r="1.5" fill="currentColor" opacity="0.5">
-                                            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite" />
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.5;0.1;0.5"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
                                         </circle>
                                         <circle cx="75" cy="70" r="1.8" fill="currentColor" opacity="0.6">
-                                            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite" />
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.6;0.2;0.6"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
                                         </circle>
                                     </svg>
                                 </div>
@@ -1428,25 +2067,114 @@
                             <div class="service-visual combo">
                                 <div class="service-icon-large">
                                     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="28" y="28" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.3">
-                                            <animateTransform attributeName="transform" type="translate" values="0,0; 2,-2; 0,0" dur="4s" repeatCount="indefinite" />
+                                        <rect
+                                            x="28"
+                                            y="28"
+                                            width="28"
+                                            height="28"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.3"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="translate"
+                                                values="0,0; 2,-2; 0,0"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="42" y="42" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.5">
-                                            <animateTransform attributeName="transform" type="translate" values="0,0; 2,-2; 0,0" dur="4s" repeatCount="indefinite" />
+                                        <rect
+                                            x="42"
+                                            y="42"
+                                            width="28"
+                                            height="28"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.5"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="translate"
+                                                values="0,0; 2,-2; 0,0"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="56" y="56" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.7" fill="currentColor" fill-opacity="0.1">
-                                            <animateTransform attributeName="transform" type="translate" values="0,0; 2,-2; 0,0" dur="4s" repeatCount="indefinite" />
+                                        <rect
+                                            x="56"
+                                            y="56"
+                                            width="28"
+                                            height="28"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.7"
+                                            fill="currentColor"
+                                            fill-opacity="0.1"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="translate"
+                                                values="0,0; 2,-2; 0,0"
+                                                dur="4s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
                                         <path d="M 70 70 L 76 64 L 82 70 L 76 76 Z" fill="currentColor" opacity="0.9">
-                                            <animateTransform attributeName="transform" type="rotate" from="0 76 70" to="360 76 70" dur="20s" repeatCount="indefinite" />
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="rotate"
+                                                from="0 76 70"
+                                                to="360 76 70"
+                                                dur="20s"
+                                                repeatCount="indefinite"
+                                            />
                                         </path>
-                                        <line x1="42" y1="42" x2="56" y2="56" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="3,3">
-                                            <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" repeatCount="indefinite" />
+                                        <line
+                                            x1="42"
+                                            y1="42"
+                                            x2="56"
+                                            y2="56"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            opacity="0.4"
+                                            stroke-dasharray="3,3"
+                                        >
+                                            <animate
+                                                attributeName="stroke-dashoffset"
+                                                values="0;6"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
                                         </line>
-                                        <line x1="56" y1="70" x2="70" y2="84" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="3,3">
-                                            <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" repeatCount="indefinite" />
+                                        <line
+                                            x1="56"
+                                            y1="70"
+                                            x2="70"
+                                            y2="84"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            opacity="0.4"
+                                            stroke-dasharray="3,3"
+                                        >
+                                            <animate
+                                                attributeName="stroke-dashoffset"
+                                                values="0;6"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
                                         </line>
-                                        <circle cx="38" cy="82" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.6" />
+                                        <circle
+                                            cx="38"
+                                            cy="82"
+                                            r="7"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.6"
+                                        />
                                         <circle cx="35" cy="80" r="1.8" fill="currentColor" opacity="0.7" />
                                         <circle cx="41" cy="80" r="1.8" fill="currentColor" opacity="0.7" />
                                         <circle cx="38" cy="85" r="1.8" fill="currentColor" opacity="0.7" />
@@ -1475,26 +2203,137 @@
                             <div class="service-visual combo">
                                 <div class="service-icon-large">
                                     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="22" y="28" width="64" height="50" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.4" />
+                                        <rect
+                                            x="22"
+                                            y="28"
+                                            width="64"
+                                            height="50"
+                                            rx="4"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.4"
+                                        />
                                         <circle cx="30" cy="36" r="2" fill="currentColor" opacity="0.5" />
                                         <circle cx="37" cy="36" r="2" fill="currentColor" opacity="0.5" />
                                         <circle cx="44" cy="36" r="2" fill="currentColor" opacity="0.5" />
-                                        <line x1="22" y1="45" x2="86" y2="45" stroke="currentColor" stroke-width="1" opacity="0.3" />
-                                        <rect x="30" y="53" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.5" opacity="0.6">
-                                            <animate attributeName="opacity" values="0.6;0.8;0.6" dur="3s" repeatCount="indefinite" />
+                                        <line
+                                            x1="22"
+                                            y1="45"
+                                            x2="86"
+                                            y2="45"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            opacity="0.3"
+                                        />
+                                        <rect
+                                            x="30"
+                                            y="53"
+                                            width="18"
+                                            height="11"
+                                            rx="2"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.6"
+                                        >
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.6;0.8;0.6"
+                                                dur="3s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="55" y="53" width="24" height="4" rx="2" fill="currentColor" opacity="0.4" />
-                                        <rect x="55" y="61" width="18" height="4" rx="2" fill="currentColor" opacity="0.4" />
-                                        <rect x="62" y="68" width="20" height="32" rx="3" stroke="currentColor" stroke-width="1.5" opacity="0.7" />
-                                        <line x1="72" y1="95" x2="72" y2="97" stroke="currentColor" stroke-width="1.5" opacity="0.5" stroke-linecap="round" />
-                                        <rect x="66" y="73" width="12" height="7" rx="1" fill="currentColor" opacity="0.5">
-                                            <animate attributeName="opacity" values="0.5;0.7;0.5" dur="2.5s" repeatCount="indefinite" />
+                                        <rect
+                                            x="55"
+                                            y="53"
+                                            width="24"
+                                            height="4"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+                                        <rect
+                                            x="55"
+                                            y="61"
+                                            width="18"
+                                            height="4"
+                                            rx="2"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+                                        <rect
+                                            x="62"
+                                            y="68"
+                                            width="20"
+                                            height="32"
+                                            rx="3"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.7"
+                                        />
+                                        <line
+                                            x1="72"
+                                            y1="95"
+                                            x2="72"
+                                            y2="97"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.5"
+                                            stroke-linecap="round"
+                                        />
+                                        <rect
+                                            x="66"
+                                            y="73"
+                                            width="12"
+                                            height="7"
+                                            rx="1"
+                                            fill="currentColor"
+                                            opacity="0.5"
+                                        >
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.5;0.7;0.5"
+                                                dur="2.5s"
+                                                repeatCount="indefinite"
+                                            />
                                         </rect>
-                                        <rect x="66" y="83" width="9" height="3" rx="1" fill="currentColor" opacity="0.4" />
-                                        <rect x="66" y="89" width="11" height="3" rx="1" fill="currentColor" opacity="0.4" />
-                                        <circle cx="52" cy="63" r="5" stroke="currentColor" stroke-width="1.5" opacity="0.8">
-                                            <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" />
-                                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+                                        <rect
+                                            x="66"
+                                            y="83"
+                                            width="9"
+                                            height="3"
+                                            rx="1"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+                                        <rect
+                                            x="66"
+                                            y="89"
+                                            width="11"
+                                            height="3"
+                                            rx="1"
+                                            fill="currentColor"
+                                            opacity="0.4"
+                                        />
+                                        <circle
+                                            cx="52"
+                                            cy="63"
+                                            r="5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            opacity="0.8"
+                                        >
+                                            <animate
+                                                attributeName="r"
+                                                values="5;7;5"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="opacity"
+                                                values="0.8;0.3;0.8"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
                                         </circle>
                                     </svg>
                                 </div>
@@ -1515,7 +2354,8 @@
                 <div class="container">
                     <div class="manifesto-content reveal">
                         <h2 class="manifesto-title">
-                            We believe in content that <em class="accent-underline">respects the reader's intelligence.</em>
+                            We believe in content that
+                            <em class="accent-underline">respects the reader's intelligence.</em>
                         </h2>
                         <p class="manifesto-description">
                             No fluff. No generic AI output. Just deeply researched, beautifully presented narratives
@@ -1625,8 +2465,12 @@
                         <h4>Connect</h4>
                         <ul class="footer-links">
                             <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                            <li><a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble</a></li>
+                            <li>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1651,14 +2495,22 @@
                 const el = document.getElementById(messageId);
                 el.textContent = message;
                 el.className = `form-message ${type}`;
-                setTimeout(() => { el.className = "form-message"; }, 5000);
+                setTimeout(() => {
+                    el.className = "form-message";
+                }, 5000);
             };
 
             document.getElementById("heroForm").addEventListener("submit", (e) => {
                 e.preventDefault();
                 const email = e.target.querySelector('input[name="email"]').value.trim();
-                if (!email)          { showMessage("heroMessage", "Please enter your email", "error"); return; }
-                if (!validateEmail(email)) { showMessage("heroMessage", "Please enter a valid email", "error"); return; }
+                if (!email) {
+                    showMessage("heroMessage", "Please enter your email", "error");
+                    return;
+                }
+                if (!validateEmail(email)) {
+                    showMessage("heroMessage", "Please enter a valid email", "error");
+                    return;
+                }
                 showMessage("heroMessage", "✓ We'll be in touch soon!", "success");
                 e.target.reset();
             });
@@ -1666,8 +2518,14 @@
             document.getElementById("ctaForm").addEventListener("submit", (e) => {
                 e.preventDefault();
                 const email = e.target.querySelector('input[name="email"]').value.trim();
-                if (!email)          { showMessage("ctaMessage", "Please enter your email", "error"); return; }
-                if (!validateEmail(email)) { showMessage("ctaMessage", "Please enter a valid email", "error"); return; }
+                if (!email) {
+                    showMessage("ctaMessage", "Please enter your email", "error");
+                    return;
+                }
+                if (!validateEmail(email)) {
+                    showMessage("ctaMessage", "Please enter a valid email", "error");
+                    return;
+                }
                 showMessage("ctaMessage", "✓ We'll be in touch soon!", "success");
                 e.target.reset();
             });
@@ -1676,9 +2534,9 @@
                MOBILE NAV
                ============================================================ */
             const navToggle = document.getElementById("navToggle");
-            const navMenu   = document.getElementById("navMenu");
-            const navLinks  = document.querySelectorAll(".nav-link, .nav-cta");
-            const header    = document.getElementById("header");
+            const navMenu = document.getElementById("navMenu");
+            const navLinks = document.querySelectorAll(".nav-link, .nav-cta");
+            const header = document.getElementById("header");
 
             navToggle.addEventListener("click", () => {
                 const expanded = navToggle.getAttribute("aria-expanded") === "true";
@@ -1688,7 +2546,7 @@
                 document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
             });
 
-            navLinks.forEach(link => {
+            navLinks.forEach((link) => {
                 link.addEventListener("click", () => {
                     navToggle.setAttribute("aria-expanded", "false");
                     navToggle.classList.remove("active");
@@ -1718,28 +2576,38 @@
             /* ============================================================
                HEADER SCROLL
                ============================================================ */
-            window.addEventListener("scroll", () => {
-                header.classList.toggle("scrolled", window.pageYOffset > 50);
-            }, { passive: true });
+            window.addEventListener(
+                "scroll",
+                () => {
+                    header.classList.toggle("scrolled", window.pageYOffset > 50);
+                },
+                { passive: true },
+            );
 
             /* ============================================================
                PAGE PROGRESS BAR
                ============================================================ */
             const progressBar = document.getElementById("progress-bar");
 
-            window.addEventListener("scroll", () => {
-                const scrollTop  = document.documentElement.scrollTop || document.body.scrollTop;
-                const docHeight  = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const progress   = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-                progressBar.style.width = Math.min(progress, 100) + "%";
-            }, { passive: true });
+            window.addEventListener(
+                "scroll",
+                () => {
+                    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                    progressBar.style.width = Math.min(progress, 100) + "%";
+                },
+                { passive: true },
+            );
 
             /* ============================================================
                CUSTOM CURSOR
                ============================================================ */
             const dot = document.getElementById("cursor-dot");
-            let cursorX = 0, cursorY = 0;
-            let dotX = 0, dotY = 0;
+            let cursorX = 0,
+                cursorY = 0;
+            let dotX = 0,
+                dotY = 0;
             let cursorVisible = false;
 
             document.addEventListener("mousemove", (e) => {
@@ -1751,7 +2619,7 @@
                 }
                 // Instant follow for the small dot
                 dot.style.left = cursorX + "px";
-                dot.style.top  = cursorY + "px";
+                dot.style.top = cursorY + "px";
             });
 
             document.addEventListener("mouseleave", () => {
@@ -1761,7 +2629,7 @@
 
             // Hover state on interactive elements
             const interactives = document.querySelectorAll("a, button, input, .service-visual, .trust-avatar");
-            interactives.forEach(el => {
+            interactives.forEach((el) => {
                 el.addEventListener("mouseenter", () => dot.classList.add("hovering"));
                 el.addEventListener("mouseleave", () => dot.classList.remove("hovering"));
             });
@@ -1769,20 +2637,23 @@
             /* ============================================================
                SCROLL REVEAL (IntersectionObserver)
                ============================================================ */
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("revealed");
-
-                        // Trigger underline in manifesto
-                        if (entry.target.classList.contains("manifesto-content")) {
+            const revealObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
                             entry.target.classList.add("revealed");
-                        }
 
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+                            // Trigger underline in manifesto
+                            if (entry.target.classList.contains("manifesto-content")) {
+                                entry.target.classList.add("revealed");
+                            }
+
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+            );
 
             document.querySelectorAll(".reveal").forEach((el, i) => {
                 revealObserver.observe(el);
@@ -1794,24 +2665,27 @@
             const statBadge = document.getElementById("statBadge");
             let counterDone = false;
 
-            const counterObserver = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting && !counterDone) {
-                    counterDone = true;
-                    let start = 0;
-                    const end = 240;
-                    const duration = 1800;
-                    const step = (timestamp) => {
-                        if (!start) start = timestamp;
-                        const progress = Math.min((timestamp - start) / duration, 1);
-                        // Ease out
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        statBadge.textContent = "+" + Math.round(eased * end) + "%";
-                        if (progress < 1) requestAnimationFrame(step);
-                    };
-                    requestAnimationFrame(step);
-                    counterObserver.disconnect();
-                }
-            }, { threshold: 0.5 });
+            const counterObserver = new IntersectionObserver(
+                (entries) => {
+                    if (entries[0].isIntersecting && !counterDone) {
+                        counterDone = true;
+                        let start = 0;
+                        const end = 240;
+                        const duration = 1800;
+                        const step = (timestamp) => {
+                            if (!start) start = timestamp;
+                            const progress = Math.min((timestamp - start) / duration, 1);
+                            // Ease out
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            statBadge.textContent = "+" + Math.round(eased * end) + "%";
+                            if (progress < 1) requestAnimationFrame(step);
+                        };
+                        requestAnimationFrame(step);
+                        counterObserver.disconnect();
+                    }
+                },
+                { threshold: 0.5 },
+            );
 
             if (statBadge) counterObserver.observe(statBadge);
 
@@ -1821,17 +2695,21 @@
             const parallaxImg = document.getElementById("heroParallaxImg");
 
             if (parallaxImg && window.innerWidth > 768) {
-                window.addEventListener("scroll", () => {
-                    const offset = window.pageYOffset;
-                    parallaxImg.style.transform = `translateY(${offset * 0.04}px)`;
-                }, { passive: true });
+                window.addEventListener(
+                    "scroll",
+                    () => {
+                        const offset = window.pageYOffset;
+                        parallaxImg.style.transform = `translateY(${offset * 0.04}px)`;
+                    },
+                    { passive: true },
+                );
             }
 
             /* ============================================================
                REDUCED MOTION — skip animations gracefully
                ============================================================ */
             if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                document.querySelectorAll(".reveal").forEach(el => el.classList.add("revealed"));
+                document.querySelectorAll(".reveal").forEach((el) => el.classList.add("revealed"));
                 if (statBadge) statBadge.textContent = "+240%";
             }
         </script>
