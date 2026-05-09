@@ -34,32 +34,61 @@
 
         <main>
             <!-- Hero Section -->
-            <section>
-                <h1>Content <em>That Converts</em> Into Growth.</h1>
-                <p>
-                    We are a creative agency engineering high-end editorial experiences and strategic content for modern
-                    brands.
-                </p>
+            <section class="hero">
+                <div class="hero__container container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">
+                            Content <em class="hero__title-emphasis">That Converts</em> Into Growth.
+                        </h1>
+                        <p class="hero__description">
+                            We are a creative agency engineering high-end editorial experiences and strategic content
+                            for modern brands.
+                        </p>
 
-                <form>
-                    <input type="email" placeholder="Enter your work email" required />
-                    <button type="submit">Get Proposal</button>
-                </form>
+                        <form class="hero__form" id="hero-form">
+                            <input
+                                type="email"
+                                class="hero__input"
+                                placeholder="Enter your work email"
+                                required
+                                aria-label="Work email"
+                            />
+                            <button type="submit" class="hero__button">Get Proposal</button>
+                        </form>
 
-                <div>
-                    <div>
-                        <!-- Avatars Placeholder -->
-                        <img src="/avatar-1.jpg" alt="User Avatar" />
-                        <img src="/avatar-2.jpg" alt="User Avatar" />
-                        <img src="/avatar-3.jpg" alt="User Avatar" />
+                        <div class="hero__trust">
+                            <div class="hero__avatars">
+                                <img
+                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
+                                    alt="User Avatar"
+                                    class="hero__avatar"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                                    alt="User Avatar"
+                                    class="hero__avatar"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+                                    alt="User Avatar"
+                                    class="hero__avatar"
+                                />
+                            </div>
+                            <p class="hero__trust-text">TRUSTED BY 100+ MODERN TEAMS</p>
+                        </div>
                     </div>
-                    <p>TRUSTED BY 100+ MODERN TEAMS</p>
-                </div>
 
-                <figure>
-                    <img src="/hero-dashboard-mockup.jpg" alt="Dashboard visualization" />
-                    <figcaption>+240%</figcaption>
-                </figure>
+                    <div class="hero__visual">
+                        <figure class="hero__figure">
+                            <img
+                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                                alt="Dashboard visualization showing growth metrics"
+                                class="hero__image"
+                            />
+                            <figcaption class="hero__stat">+240%</figcaption>
+                        </figure>
+                    </div>
+                </div>
             </section>
 
             <!-- Logo Cloud -->
